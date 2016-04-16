@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_center_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    >
+
+    <app.originality.com.originality.widget.CustomTextView
+        android:id="@+id/title_center_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_center_edit_layout_height"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_search"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/title_center_icon_search"
+            android:layout_width="@dimen/title_center_edit_layout_del_width"
+            android:layout_height="@dimen/title_center_edit_layout_del_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp" >
+
+            <ImageView
+                android:layout_width="@dimen/title_center_edit_btn_del_width"
+                android:layout_height="@dimen/title_center_edit_btn_del_width"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_search"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/title_center_btn_del"
+            android:layout_width="@dimen/title_center_edit_layout_del_width"
+            android:layout_height="@dimen/title_center_edit_layout_del_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" >
+
+            <ImageView
+                android:layout_width="@dimen/title_center_edit_btn_del_width"
+                android:layout_height="@dimen/title_center_edit_btn_del_width"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_btn_del"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/title_center_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_center_edit_height"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/title_center_edit_margin"
+            android:layout_toLeftOf="@id/title_center_btn_del"
+            android:layout_toRightOf="@id/title_center_icon_search"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="13sp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</RelativeLayout>

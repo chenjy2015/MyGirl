@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">Originality</string>
+
+    <!-- HomeActivity -->
+    <string name="retry_exit">再按一次退出程序</string>
+
+    <!-- GuidePageActivity -->
+    <string name="enter_app">进入APP</string>
+
+    <!-- LoginActivity -->
+    <string name="login_account">账号</string>
+    <string name="login_password">密码</string>
+    <string name="login_submit">登录</string>
+    <string name="login_forget_psw">忘记密码?</string>
+    <string name="login_register">注册</string>
+    <string name="login_account_hint">数字+字母组成 6-12位</string>
+    <string name="login_password_hint">数字+字母 首个字母为大写 6-12位</string>
+
+    <!-- RegisterActivity -->
+    <string name="account">账号</string>
+    <string name="name">姓名</string>
+    <string name="age">年龄</string>
+    <string name="sex">性别</string>
+    <string name="hobby">爱好</string>
+    <string name="phone">电话</string>
+    <string name="email">邮箱</string>
+    <string name="password">密码</string>
+    <string name="reconfirm_psw">重复密码</string>
+    <string name="register">注册</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- PersonalFragment-->
+    <string name="label">标签</string>
+    <string name="ideal_home">理想居所</string>
+    <string name="my_plan">我的计划</string>
+    <string name="switch_account">切换账号</string>
+    <string name="setting">设置</string>
+
 </resources>

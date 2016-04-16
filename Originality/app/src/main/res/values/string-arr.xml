@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="guide_hint_content">
+        <item>专属于你的APP</item>
+        <item>上传及整理你的珍贵资料</item>
+        <item>一路走过属于你的心路历程</item>
+    </array>
+
+    <array name="menus">
+        <item>我的音乐</item>
+        <item>我的照片</item>
+        <item>我的视频</item>
+        <item>备忘录</item>
+        <item>我的收藏</item>
+        <item>关于</item>
+    </array>
+</resources>

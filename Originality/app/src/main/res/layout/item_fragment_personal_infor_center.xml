@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.PersonalInforFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/personal_item_layout_height"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/id_personal_age_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_layout_pressed"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textSize="@dimen/personal_item_text_size" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/id_personal_age_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="25"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true"
+                    android:textSize="@dimen/personal_item_text_size" />
+
+                <EditText
+                    android:id="@+id/id_personal_age_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true"
+                    android:textSize="@dimen/personal_item_text_size"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_personal_sex_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/selector_layout_pressed"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sex"
+                android:textSize="@dimen/personal_item_text_size" />
+
+            <TextView
+                android:id="@+id/id_personal_sex_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="男"
+                android:textSize="@dimen/personal_item_text_size" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/litte_gray" />
+
+    <LinearLayout
+        android:id="@+id/id_personal_label_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/personal_item_layout_height"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/selector_layout_pressed"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label"
+            android:textSize="@dimen/personal_item_text_size" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/id_personal_label_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="诚实 勇敢 果断 ..."
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/personal_item_text_size" />
+
+            <EditText
+                android:id="@+id/id_personal_label_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/personal_item_text_size"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/litte_gray" />
+
+    <LinearLayout
+        android:id="@+id/id_personal_home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/personal_item_layout_height"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/selector_layout_pressed"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ideal_home"
+            android:textSize="@dimen/personal_item_text_size" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/id_personal_home_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="澳大利亚，文莱，新加坡"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/personal_item_text_size" />
+
+            <EditText
+                android:id="@+id/id_personal_home_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/personal_item_text_size"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/litte_gray" />
+
+    <LinearLayout
+        android:id="@+id/id_personal_plan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/personal_item_layout_height"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/selector_layout_pressed"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_plan"
+            android:textSize="@dimen/personal_item_text_size" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/id_personal_my_plan_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="徒步旅行 ，西藏穿越，桂林西湖游览，攀登泰山..."
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/personal_item_text_size" />
+
+            <EditText
+                android:id="@+id/id_personal_my_plan_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/personal_item_text_size"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/litte_gray" />
+
+    <LinearLayout
+        android:id="@+id/id_personal_setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/personal_item_layout_height"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/selector_layout_pressed"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting"
+            android:textSize="@dimen/personal_item_text_size" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

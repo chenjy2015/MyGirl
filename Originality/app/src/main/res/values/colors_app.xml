@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- 分割线颜色 -->
+    <color name="underline_bg">#a7a7ab</color>
+
+    <!-- title -->
+    <color name="title_layout_color">#eaeaea</color>
+    <color name="title_layout_pressed_color">#aaaaaa</color>
+    <color name="default_activity_background_color">#EFEFEF</color>
+
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".ui.fragment.PersonalInforFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/personal_item_layout_head_height"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/id_personal_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/id_personal_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="right|center_vertical"
+                android:maxLength="5"
+                android:paddingRight="35dp"
+                android:singleLine="true"
+                android:text="张三"
+                android:textSize="28sp" />
+
+            <EditText
+                android:id="@+id/id_personal_name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="right|center_vertical"
+                android:maxLength="5"
+                android:paddingRight="35dp"
+                android:singleLine="true"
+                android:text="张三"
+                android:textSize="35sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/litte_gray" />
+
+    <include layout="@layout/item_fragment_personal_infor_center" />
+
+    <TextView
+        android:id="@+id/id_switch_account"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_guide_btn"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/switch_account"
+        android:textColor="@color/selector_guide_btn_text"
+        android:textSize="18sp" />
+
+</LinearLayout>
