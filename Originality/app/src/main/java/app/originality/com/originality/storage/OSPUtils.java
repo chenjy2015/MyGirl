@@ -12,8 +12,8 @@ import app.originality.com.originality.util.StringUtils;
 /**
  * @author cjy
  * @version V1.0
- * @company 信息存储辅助类
- * @Description
+ * @company Chenjy_Studio
+ * @Description 信息存储辅助类
  * @date 2016/3/31
  */
 public class OSPUtils {
@@ -89,13 +89,6 @@ public class OSPUtils {
         }
         return userInfor;
     }
-
-
-
-
-
-
-
 
 
     /**

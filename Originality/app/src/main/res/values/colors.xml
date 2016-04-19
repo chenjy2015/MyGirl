@@ -38,6 +38,8 @@
     <color name="purple">#800080</color>
     <!-- 紫色 -->
     <color name="maroon">#800000</color>
+    <!-- 红色 -->
+    <color name="red">#ff2020</color>
     <!-- 粟色 -->
     <color name="aquamarine">#7FFFD4</color>
     <!-- 碧绿色 -->
@@ -135,7 +137,7 @@
 
 
 
-    <!-- AlbumListActivity -->
+    <!-- PhotoListActivity -->
     <color name="saffron">#F4B63E</color>
     <color name="sienna">#EB6460</color>
     <color name="pink">#ff4284</color>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/id_photo_img"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:backgroundImage="@color/blue"
+        fresco:fadeDuration="300"
+        fresco:failureImage="@mipmap/ic_launcher"
+        fresco:failureImageScaleType="centerInside"
+        fresco:overlayImage="@drawable/ic_launcher"
+        fresco:placeholderImage="@color/white"
+        fresco:placeholderImageScaleType="fitCenter"
+        fresco:pressedStateOverlayImage="@color/red"
+        fresco:progressBarAutoRotateInterval="1000"
+        fresco:progressBarImage="@color/green"
+        fresco:progressBarImageScaleType="centerInside"
+        fresco:retryImage="@color/seagreen"
+        fresco:retryImageScaleType="centerCrop"
+        fresco:roundAsCircle="false"
+        fresco:roundBottomLeft="false"
+        fresco:roundBottomRight="true"
+        fresco:roundTopLeft="true"
+        fresco:roundTopRight="false"
+        fresco:roundWithOverlayColor="@color/white"
+        fresco:roundedCornerRadius="1dp"
+        fresco:roundingBorderColor="@color/white"
+        fresco:roundingBorderWidth="2dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/id_photo_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="label" />
+
+        <TextView
+            android:id="@+id/id_photo_create_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="create time" />
+
+        <TextView
+            android:id="@+id/id_photo_modify_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="modify time" />
+
+        <TextView
+            android:id="@+id/id_photo_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="size" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

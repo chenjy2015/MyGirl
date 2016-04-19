@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Originality</string>
+    <string name="app_name">我的女孩APP</string>
+    <string name="app_create">chenjy_studio(佳勇工作室)</string>
+    <string name="app_create_time">2016.3.1</string>
+    <string name="app_version">version 1.0</string>
 
     <!-- HomeActivity -->
     <string name="retry_exit">再按一次退出程序</string>
@@ -38,5 +41,8 @@
     <string name="my_plan">我的计划</string>
     <string name="switch_account">切换账号</string>
     <string name="setting">设置</string>
+
+    <!-- AboutFragment -->
+    <string name="about_description1">专属于您的APP  一路走过的旅程 我们为您记录</string>
 
 </resources>

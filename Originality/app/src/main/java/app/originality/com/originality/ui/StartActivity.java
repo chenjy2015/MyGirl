@@ -11,7 +11,7 @@ import app.originality.com.originality.util.JumpManager;
 /**
  * @author cjy
  * @version V1.0
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 启动页
  * @date 2016/4/1
  */

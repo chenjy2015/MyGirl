@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * @author cjy
  * @version V1.0
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 获取应用配置的文字信息集合辅助类
  * @date 2016/4/1
  */

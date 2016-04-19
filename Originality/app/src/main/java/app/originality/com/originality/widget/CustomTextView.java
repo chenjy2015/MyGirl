@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 /**
  *
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 自定义TextView 可根据内容长短 自动缩小文字
  * @author cjy
  * @date 2016/4/1

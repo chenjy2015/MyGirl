@@ -20,7 +20,7 @@ import app.originality.com.originality.widget.TitleBar;
 /**
  * @author cjy
  * @version V1.0
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description Activity基类
  * @date 2016/4/1
  */

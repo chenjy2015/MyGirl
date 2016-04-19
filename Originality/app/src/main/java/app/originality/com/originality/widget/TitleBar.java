@@ -16,7 +16,7 @@ import app.originality.com.originality.util.StringUtils;
 
 
 /**
- * @company: 创意APP
+ * @company: Chenjy_Studio
  * @Description: 自定义Title布局
  * @author: cjy
  * @date: 2015-11-24

@@ -17,7 +17,7 @@ import app.originality.com.originality.util.ToastUtils;
 /**
  * @author cjy
  * @version V1.0
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 登录页面
  * @date 2016/4/5
  */

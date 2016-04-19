@@ -24,7 +24,7 @@ import app.originality.com.originality.util.StringHelper;
 /**
  * @author cjy
  * @version V1.0
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 首次安装时的引导界面
  * @date 2016/4/1
  */

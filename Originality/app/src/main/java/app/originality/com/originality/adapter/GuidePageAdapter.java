@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 引导界面适配器
  * @author cjy
  * @date 2016/4/6

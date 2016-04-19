@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * @author cjy
  * @version V1.0
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 个人资料
  * @date 2016/4/8
  */

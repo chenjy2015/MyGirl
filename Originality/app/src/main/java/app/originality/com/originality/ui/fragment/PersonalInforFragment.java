@@ -147,7 +147,6 @@ public class PersonalInforFragment extends BaseFragment implements View.OnClickL
 
             //设置
         } else if (v.getId() == R.id.id_personal_setting) {
-            JumpManager.jumpPhotoAlbumActivity(mAct);
 
             //其他位置
         } else if (v.getId() == R.id.id_parent_layout) {

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author cjy
  * @version V1.0
- * @company 创意APP
+ * @company Chenjy_Studio
  * @Description 适配器基础类
  * @date 2016/4/6
  */

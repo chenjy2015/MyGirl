@@ -3,7 +3,7 @@ package app.originality.com.originality.util;
 import android.content.Context;
 import android.content.Intent;
 
-import app.originality.com.originality.modules.photo.ui.AlbumListActivity;
+import app.originality.com.originality.modules.photo.ui.PhotoListActivity;
 import app.originality.com.originality.ui.GuidePageActivity;
 import app.originality.com.originality.ui.HomeActivity;
 import app.originality.com.originality.ui.LoginActivity;
@@ -57,7 +57,8 @@ public class JumpManager {
      * @param context
      */
     public static void jumpPhotoAlbumActivity(Context context) {
-        Intent intent = new Intent(context, AlbumListActivity.class);
+        Intent intent = new Intent(context, PhotoListActivity.class);
         context.startActivity(intent);
     }
+
 }

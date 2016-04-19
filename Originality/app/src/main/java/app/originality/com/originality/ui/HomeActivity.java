@@ -12,9 +12,11 @@ import android.widget.Toast;
 
 
 import app.originality.com.originality.R;
+import app.originality.com.originality.ui.fragment.AboutFragment;
 import app.originality.com.originality.ui.fragment.BaseFragment;
 import app.originality.com.originality.ui.fragment.HomeFragment;
 import app.originality.com.originality.ui.fragment.PersonalInforFragment;
+import app.originality.com.originality.ui.fragment.PhotoFragment;
 import app.originality.com.originality.util.StringHelper;
 import app.originality.com.originality.util.ToastUtils;
 import app.originality.com.residemenu.ResideMenu;
@@ -86,12 +88,12 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
     private ResideMenu.OnMenuListener menuListener = new ResideMenu.OnMenuListener() {
         @Override
         public void openMenu() {
-            Toast.makeText(getApplicationContext(), "Menu is opened!", Toast.LENGTH_SHORT).show();
+            ToastUtils.showBigVioletToastOnBottom(HomeActivity.this, "Menu is open!");
         }
 
         @Override
         public void closeMenu() {
-            Toast.makeText(getApplicationContext(), "Menu is closed!", Toast.LENGTH_SHORT).show();
+            ToastUtils.showBigVioletToastOnBottom(HomeActivity.this, "Menu is closed!");
         }
     };
 
@@ -115,6 +117,10 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
         int tag = (Integer) view.getTag();
         if (tag == 10) {
             changeFragment(new PersonalInforFragment());
+        }else if(tag == 1){
+            changeFragment(new PhotoFragment());
+        }else if(tag == 5){
+            changeFragment(new AboutFragment());
         }
         resideMenu.closeMenu();
     }
@@ -157,6 +163,5 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
             finish();
             android.os.Process.killProcess(android.os.Process.myPid());
         }
-
     }
 }
