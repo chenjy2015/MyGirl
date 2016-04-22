@@ -58,7 +58,6 @@ public class PhotoListAdapter extends OriginalityBaseAdapter {
         PhotoBeanVO photoBeanVO = (PhotoBeanVO) mData.get(position);
         Uri uri = Uri.parse(photoBeanVO.getUrl());
         viewHolder.mImg.setImageURI(uri);
-//        viewHolder.mImg.setImageResource(R.mipmap.ic_launcher);
         viewHolder.mLabel.setText(StringUtils.checkStringIsNull(photoBeanVO.getLabel()));
         viewHolder.mCreateTimeText.setText(StringUtils.checkStringIsNull(photoBeanVO.getCreateTime()));
         viewHolder.mModifyTimeText.setText(StringUtils.checkStringIsNull(photoBeanVO.getModifyTime()));
