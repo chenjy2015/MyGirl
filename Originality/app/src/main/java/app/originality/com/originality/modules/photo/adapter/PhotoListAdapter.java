@@ -49,8 +49,10 @@ public class PhotoListAdapter extends OriginalityBaseAdapter {
         }
 
         //动态随机设定 图片高度
-        int positionHeight = getPositionRatio(viewHolder.mImg.getLayoutParams().height);
-        viewHolder.mImg.getLayoutParams().height = positionHeight;
+        int positionHeight = getPositionRatio(position);
+        int height = viewHolder.mImg.getLayoutParams().height;
+        //对比当前图片高度 限制其不能大于200dp
+        viewHolder.mImg.getLayoutParams().height = height > AndroidSystemHelper.dp2px(200, mAct) ? height : height + positionHeight;
 
 
         PhotoBeanVO photoBeanVO = (PhotoBeanVO) mData.get(position);
@@ -86,8 +88,8 @@ public class PhotoListAdapter extends OriginalityBaseAdapter {
 
     private final Random mRandom;
 
-    private int getPositionRatio(int paramsHeight) {
-        int totalHeight = AndroidSystemHelper.dp2px(mRandom.nextInt(150), mAct) + paramsHeight;
+    private int getPositionRatio(int position) {
+        int totalHeight = AndroidSystemHelper.dp2px(mRandom.nextInt(100 + position), mAct);
         return totalHeight;
     }
 }
