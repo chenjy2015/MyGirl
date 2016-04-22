@@ -1,1 +1,1 @@
-include ':app', ':residemenu', ':flipviewpager'
+include ':app', ':residemenu', ':flipviewpager', ':library', ':library1'

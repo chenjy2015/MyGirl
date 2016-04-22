@@ -3,6 +3,8 @@ package app.originality.com.originality.util;
 import android.content.Context;
 import android.content.Intent;
 
+import app.originality.com.originality.bean.PhotoGroupVO;
+import app.originality.com.originality.modules.photo.bean.PhotoBeanVO;
 import app.originality.com.originality.modules.photo.ui.PhotoListActivity;
 import app.originality.com.originality.ui.GuidePageActivity;
 import app.originality.com.originality.ui.HomeActivity;
@@ -56,8 +58,9 @@ public class JumpManager {
      *
      * @param context
      */
-    public static void jumpPhotoAlbumActivity(Context context) {
+    public static void jumpPhotoAlbumActivity(Context context, PhotoGroupVO photoGroupVO) {
         Intent intent = new Intent(context, PhotoListActivity.class);
+        intent.putExtra("PhotoGroupVO",photoGroupVO);
         context.startActivity(intent);
     }
 

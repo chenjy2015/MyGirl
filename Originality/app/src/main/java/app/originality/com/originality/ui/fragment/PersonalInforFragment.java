@@ -1,12 +1,17 @@
 package app.originality.com.originality.ui.fragment;
 
+import android.net.Uri;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.drawee.view.DraweeView;
+import com.facebook.drawee.view.SimpleDraweeView;
+
 import app.originality.com.originality.R;
 import app.originality.com.originality.bean.PersonalInforVO;
+import app.originality.com.originality.config.Contants;
 import app.originality.com.originality.storage.OSPUtils;
 import app.originality.com.originality.util.AndroidSystemHelper;
 import app.originality.com.originality.util.JumpManager;
@@ -22,7 +27,7 @@ import app.originality.com.originality.util.StringUtils;
 public class PersonalInforFragment extends BaseFragment implements View.OnClickListener, View.OnFocusChangeListener {
 
     private View mParentLayout, mAgeLayout, mSexLayout, mLabelLayout, mHomeLayout, mPlanLayout, mSettingLayout;
-    private ImageView mUserImg;
+    private SimpleDraweeView mUserImg;
     private TextView mUserNameText, mUserAgeText, mSexText, mLabelText, mHomeText, mPlanText, mSwitchText;
     private EditText mUserNameEdit, mUserAgeEdit, mLabelEdit, mHomeEdit, mPlanEdit;
 
@@ -47,7 +52,7 @@ public class PersonalInforFragment extends BaseFragment implements View.OnClickL
         mPlanLayout = this.findViewById(R.id.id_personal_plan_layout);
         mSettingLayout = this.findViewById(R.id.id_personal_setting);
 
-        mUserImg = (ImageView) this.findViewById(R.id.id_personal_img);
+        mUserImg = (SimpleDraweeView) this.findViewById(R.id.id_personal_img);
         mUserNameText = (TextView) this.findViewById(R.id.id_personal_name_text);
         mUserAgeText = (TextView) this.findViewById(R.id.id_personal_age_text);
         mSexText = (TextView) this.findViewById(R.id.id_personal_sex_text);
@@ -88,6 +93,8 @@ public class PersonalInforFragment extends BaseFragment implements View.OnClickL
         if (mPersonalVO == null) {
             mPersonalVO = new PersonalInforVO();
         }
+        Uri uri = Uri.parse(Contants.imageUrls[12]);
+        mUserImg.setImageURI(uri);
     }
 
     @Override
