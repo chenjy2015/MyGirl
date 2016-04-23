@@ -142,5 +142,6 @@ public class GuidePageActivity extends BaseActivity implements View.OnClickListe
     public void onClick(View v) {
         OSPUtils.setFirstLauncher(GuidePageActivity.this, false);
         JumpManager.jumpHomeActivity(GuidePageActivity.this);
+        GuidePageActivity.this.finish();
     }
 }

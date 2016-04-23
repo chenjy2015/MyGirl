@@ -45,7 +45,6 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.onCreate(savedInstanceState);
         View view = View.inflate(getApplicationContext(), R.layout.activity_base, null);
         // 布局内容会从actionbar以下开始
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {

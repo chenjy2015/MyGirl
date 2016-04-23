@@ -9,9 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/StaggeredGridViewlibrary" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/flipviewpager" />
-            <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/library1" />
             <option value="$PROJECT_DIR$/residemenu" />
           </set>
@@ -19,9 +19,9 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/StaggeredGridViewlibrary" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/flipviewpager" />
-            <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/library1" />
             <option value="$PROJECT_DIR$/residemenu" />
           </set>

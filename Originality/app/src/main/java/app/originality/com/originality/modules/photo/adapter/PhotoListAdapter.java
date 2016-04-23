@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.DraweeView;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import app.originality.com.originality.R;
 import app.originality.com.originality.adapter.OriginalityBaseAdapter;
@@ -54,10 +55,11 @@ public class PhotoListAdapter extends OriginalityBaseAdapter {
         //对比当前图片高度 限制其不能大于200dp
         viewHolder.mImg.getLayoutParams().height = height > AndroidSystemHelper.dp2px(200, mAct) ? height : height + positionHeight;
 
-
         PhotoBeanVO photoBeanVO = (PhotoBeanVO) mData.get(position);
         Uri uri = Uri.parse(photoBeanVO.getUrl());
         viewHolder.mImg.setImageURI(uri);
+//        ImageLoader.getInstance().displayImage(photoBeanVO.getUrl(),viewHolder.mImg);
+
         viewHolder.mLabel.setText(StringUtils.checkStringIsNull(photoBeanVO.getLabel()));
         viewHolder.mCreateTimeText.setText(StringUtils.checkStringIsNull(photoBeanVO.getCreateTime()));
         viewHolder.mModifyTimeText.setText(StringUtils.checkStringIsNull(photoBeanVO.getModifyTime()));
@@ -65,7 +67,7 @@ public class PhotoListAdapter extends OriginalityBaseAdapter {
     }
 
     public class ViewHolder {
-        //        private ImageView mImg;
+//        private ImageView mImg;
         private SimpleDraweeView mImg;
         private TextView mLabel;
         private TextView mCreateTimeText;

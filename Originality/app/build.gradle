@@ -40,6 +40,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 //    compile files('libs/android-support-v4.jar')
     compile files('libs/gson-2.2.4.jar')
+    compile files('libs/imageloader.jar')
+    compile files('libs/EventBus.jar')
     compile project(':residemenu')
 //    compile project(':volley')
     compile project(':flipviewpager')
@@ -48,5 +50,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.facebook.fresco:fresco:0.9.0+'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
-    compile project(path: ':library')
+    compile project(path: ':StaggeredGridViewlibrary')
 }

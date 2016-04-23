@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.DraweeView;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import app.originality.com.originality.R;
 import app.originality.com.originality.bean.PhotoGroupVO;
@@ -66,14 +67,14 @@ public class PhotoHomeRecyclerAdapter extends RecyclerView.Adapter {
 
 
     class PhotoHomeHolder extends RecyclerView.ViewHolder {
-        public DraweeView albumImg;
+        public SimpleDraweeView albumImg;
         public TextView albumText;
         public View view;
 
         public PhotoHomeHolder(View itemView) {
             super(itemView);
             this.view = itemView;
-            this.albumImg = (DraweeView) itemView.findViewById(R.id.id_album_img);
+            this.albumImg = (SimpleDraweeView) itemView.findViewById(R.id.id_album_img);
             this.albumText = (TextView) itemView.findViewById(R.id.id_album_text);
         }
     }

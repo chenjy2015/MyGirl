@@ -14,7 +14,7 @@ import java.io.InputStream;
 
 /**
  * 
- * 项目名称：CloudSurveyPro 类名称：FastBitmapDrawable 类描述： 放大与缩小Bitmap辅助类
+ * 类名称：FastBitmapDrawable 类描述： 放大与缩小Bitmap辅助类
  * 创建人：chenjiayou 创建时间：2015-7-21 pm 16:34
  * 
  * @version

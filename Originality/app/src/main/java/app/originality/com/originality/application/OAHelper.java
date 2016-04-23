@@ -4,7 +4,10 @@ package app.originality.com.originality.application;
 import android.content.Context;
 
 import app.originality.com.originality.bean.UserInfor;
+import app.originality.com.originality.config.Contants;
 import app.originality.com.originality.storage.OSPUtils;
+
+import java.util.ArrayList;
 
 public class OAHelper {
 
@@ -26,6 +29,19 @@ public class OAHelper {
             }
         }
         return "";
+    }
+
+    /**
+     * 获取本地图片地址 ArrayList形式
+     * @param context
+     * @return
+     */
+    public static ArrayList<String> getImageUrlsToArray(Context context) {
+        ArrayList<String> data = new ArrayList<String>();
+        for (int i = 0; i < Contants.imageUrls.length; i++) {
+            data.add(Contants.imageUrls[i]);
+        }
+        return data;
     }
 
 }

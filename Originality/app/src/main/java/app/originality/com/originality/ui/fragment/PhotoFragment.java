@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.yalantis.flipviewpager.utils.FlipSettings;
 
 import app.originality.com.originality.R;
@@ -60,22 +61,22 @@ public class PhotoFragment extends BaseFragment implements RecyclerViewItemClick
         p.setGroupId("0");
 
         PhotoGroupVO p1 = new PhotoGroupVO();
-        p1.setGroupUrl(Contants.imageUrls[0]);
+        p1.setGroupUrl(Contants.imageUrls[1]);
         p1.setGroupDescription("桂林 2015.6.11");
         p1.setGroupId("1");
 
         PhotoGroupVO p2 = new PhotoGroupVO();
-        p2.setGroupUrl(Contants.imageUrls[0]);
+        p2.setGroupUrl(Contants.imageUrls[2]);
         p2.setGroupDescription("哈尔滨 2015.8.09");
         p2.setGroupId("2");
 
         PhotoGroupVO p3 = new PhotoGroupVO();
-        p3.setGroupUrl(Contants.imageUrls[0]);
+        p3.setGroupUrl(Contants.imageUrls[3]);
         p3.setGroupDescription("马来西亚 2015.11.16");
         p3.setGroupId("3");
 
         PhotoGroupVO p4 = new PhotoGroupVO();
-        p4.setGroupUrl(Contants.imageUrls[0]);
+        p4.setGroupUrl(Contants.imageUrls[4]);
         p4.setGroupDescription("纽约 2016.4.16");
         p4.setGroupId("4");
 

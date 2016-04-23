@@ -26,6 +26,16 @@
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".modules.photo.ui.PhotoListActivity" />
+        <activity
+            android:name=".modules.photo.ui.SpaceImageDetailActivity"
+            android:theme="@style/IMTheme.Transparent">
+        </activity>
+
+        <activity
+            android:name=".modules.photo.ui.SpaceImageDetailActivity1"
+            android:theme="@style/IMTheme.Transparent">
+        </activity>
+
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

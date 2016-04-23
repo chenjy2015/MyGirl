@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp">
 
-    <com.facebook.drawee.view.DraweeView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/id_album_img"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher" />
+        android:scaleType="fitXY"
+        fresco:placeholderImage="@drawable/ic_launcher" />
+
 
     <TextView
         android:id="@+id/id_album_text"

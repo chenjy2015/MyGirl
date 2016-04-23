@@ -29,26 +29,25 @@
         fresco:roundingBorderColor="@color/white"
         fresco:roundingBorderWidth="2dp" />-->
 
-     <!--<ImageView
-         android:id="@+id/id_photo_img"
-         android:layout_width="match_parent"
-         android:scaleType="fitXY"
-         android:layout_height="wrap_content" />-->
+        <!-- <ImageView
+             android:id="@+id/id_photo_img"
+             android:layout_width="match_parent"
+             android:scaleType="fitXY"
+             android:layout_height="150dp" />-->
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/id_photo_img"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:scaleType="fitXY"
-        fresco:placeholderImage="@drawable/ic_launcher" />
+        android:scaleType="fitXY" />
 
     <LinearLayout
         android:id="@+id/id_img_description_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:padding="5dp"
-        android:layout_marginTop="20dp"
         android:visibility="gone">
 
         <TextView

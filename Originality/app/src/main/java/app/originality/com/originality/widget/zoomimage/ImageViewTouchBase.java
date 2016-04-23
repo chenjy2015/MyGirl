@@ -22,7 +22,7 @@ import com.nineoldandroids.animation.ValueAnimator;
 
 /**
  * 
- * 项目名称：CloudSurveyPro 类名称：ImageViewTouch 类描述： 继承自ImageView 实现触摸放大与缩小
+ * 类名称：ImageViewTouch 类描述： 继承自ImageView 实现触摸放大与缩小
  * 创建人：chenjiayou 创建时间：2015-7-21 pm 16:34
  * 
  * @version

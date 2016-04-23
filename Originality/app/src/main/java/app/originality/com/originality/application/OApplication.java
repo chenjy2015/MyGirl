@@ -4,7 +4,13 @@ import android.app.Application;
 import android.content.Context;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import app.originality.com.originality.R;
 import app.originality.com.originality.bean.UserInfor;
 import app.originality.com.originality.storage.OSPUtils;
 
@@ -21,6 +27,8 @@ public class OApplication extends Application {
         init();
         //facebook 图片处理框架初始化
         Fresco.initialize(this);
+        //ImageLoader 图片处理框架初始化
+        initImageLoadConfig();
     }
 
     public static void init() {
@@ -49,4 +57,25 @@ public class OApplication extends Application {
         return mUserInfor;
     }
 
+    private void initImageLoadConfig() {
+        @SuppressWarnings("deprecation")
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .showImageForEmptyUri(R.mipmap.ic_empty) // 设置图片Uri为空或是错误的时候显示的图片
+                .showImageOnFail(R.mipmap.ic_error) // 设置图片加载或解码过程中发生错误显示的图片
+//                .showImageOnLoading(R.mipmap.ic_launcher) //加载过程中默认图片
+                .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
+                .cacheOnDisc(true) // 设置下载的图片是否缓存在SD卡中
+                // .displayer(new RoundedBitmapDisplayer(20)) // 设置成圆角图片
+                .build(); // 创建配置过得DisplayImageOption对象
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                getApplicationContext()).defaultDisplayImageOptions(options)
+                .threadPriority(Thread.NORM_PRIORITY - 2)
+                .denyCacheImageMultipleSizesInMemory()
+                .discCacheFileNameGenerator(new Md5FileNameGenerator())
+                .tasksProcessingOrder(QueueProcessingType.LIFO)
+//                        .writeDebugLogs() // 是否打印log日志
+                .build();
+        ImageLoader.getInstance().init(config);
+    }
 }
