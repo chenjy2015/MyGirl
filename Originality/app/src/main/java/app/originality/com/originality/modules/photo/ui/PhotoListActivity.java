@@ -1,44 +1,24 @@
 package app.originality.com.originality.modules.photo.ui;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.PixelFormat;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.etsy.android.grid.StaggeredGridView;
-import com.facebook.drawee.generic.GenericDraweeHierarchy;
-import com.facebook.drawee.view.DraweeView;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.yalantis.flipviewpager.utils.FlipSettings;
 
 
 import app.originality.com.originality.R;
-import app.originality.com.originality.application.OAHelper;
 import app.originality.com.originality.bean.PhotoGroupVO;
 import app.originality.com.originality.config.Contants;
-import app.originality.com.originality.modules.photo.adapter.FriendsAdapter;
 import app.originality.com.originality.modules.photo.adapter.PhotoListAdapter;
 import app.originality.com.originality.modules.photo.bean.PhotoBeanVO;
-import app.originality.com.originality.modules.photo.utils.Utils;
 import app.originality.com.originality.modules.photo.views.ScrollDialog;
 import app.originality.com.originality.ui.BaseActivity;
-import app.originality.com.originality.util.AndroidSystemHelper;
-import app.originality.com.originality.util.BitmapUtils;
 import app.originality.com.originality.util.DataTimeUtils;
-import app.originality.com.originality.util.ToastUtils;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class PhotoListActivity extends BaseActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
@@ -133,7 +113,7 @@ public class PhotoListActivity extends BaseActivity implements AdapterView.OnIte
     }
 
     public void JumpSpaceImageDetailActivity(View view, int position) {
-        Intent intent = new Intent(PhotoListActivity.this, SpaceImageDetailActivity.class);
+        Intent intent = new Intent(PhotoListActivity.this, SpaceImageDetailActivity1.class);
         intent.putExtra("imageUrl", Contants.imageUrls[position]);
         intent.putExtra("position", position);
 

@@ -5,25 +5,23 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="C:\Program Files\Android\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.8-all" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/StaggeredGridViewlibrary" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/flipviewpager" />
-            <option value="$PROJECT_DIR$/library1" />
             <option value="$PROJECT_DIR$/residemenu" />
+            <option value="$PROJECT_DIR$/staggeredgridviewlibrary" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/StaggeredGridViewlibrary" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/flipviewpager" />
-            <option value="$PROJECT_DIR$/library1" />
             <option value="$PROJECT_DIR$/residemenu" />
+            <option value="$PROJECT_DIR$/staggeredgridviewlibrary" />
           </set>
         </option>
       </GradleProjectSettings>

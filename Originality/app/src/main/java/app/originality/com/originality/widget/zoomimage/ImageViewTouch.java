@@ -18,12 +18,12 @@ import android.view.ScaleGestureDetector.OnScaleGestureListener;
 import android.view.ViewConfiguration;
 
 /**
- * 
+ *
  * 类名称：ImageViewTouch 类描述： 继承自ImageViewTouchBase 实现触摸放大与缩小
  * 创建人：chenjiayou 创建时间：2015-7-21 pm 16:34
- * 
+ *
  * @version
- * 
+ *
  */
 public class ImageViewTouch extends ImageViewTouchBase {
     static final float SCROLL_DELTA_THRESHOLD = 1.0f;
@@ -41,6 +41,10 @@ public class ImageViewTouch extends ImageViewTouchBase {
     protected boolean mScrollEnabled = true;
     private OnImageViewTouchDoubleTapListener mDoubleTapListener;
     private OnImageViewTouchSingleTapListener mSingleTapListener;
+
+    public ImageViewTouch(Context context){
+        super(context);
+    }
 
     public ImageViewTouch(Context context, AttributeSet attrs) {
         super(context, attrs);

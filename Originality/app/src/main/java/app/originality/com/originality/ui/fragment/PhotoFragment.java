@@ -1,24 +1,21 @@
 package app.originality.com.originality.ui.fragment;
 
-import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.yalantis.flipviewpager.utils.FlipSettings;
-
 import app.originality.com.originality.R;
 import app.originality.com.originality.adapter.PhotoHomeRecyclerAdapter;
 import app.originality.com.originality.bean.PhotoGroupVO;
 import app.originality.com.originality.config.Contants;
-import app.originality.com.originality.modules.photo.adapter.FriendsAdapter;
 import app.originality.com.originality.modules.photo.interfaces.RecyclerViewItemClickListenner;
-import app.originality.com.originality.modules.photo.utils.Utils;
 import app.originality.com.originality.util.JumpManager;
 import app.originality.com.originality.util.ToastUtils;
+import app.originality.com.originality.util.media.MediaContact;
+import app.originality.com.originality.util.media.MediaManager;
+import app.originality.com.originality.util.media.MediaType;
 import app.originality.com.originality.widget.recycler_divider_itemDecoration.HorizontalDividerItemDecoration;
 
 import java.util.ArrayList;
@@ -44,13 +41,14 @@ public class PhotoFragment extends BaseFragment implements RecyclerViewItemClick
 
     @Override
     protected void initEvent() {
-
+        MediaManager.getInstance().player(mAct, MediaType.MUSIC_RAW, MediaContact.AbsoluteMusic.MUSIC_ID_DRAGON_WARRIOR_RISE + "");
     }
 
     @Override
     protected void init() {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mAct);
         mRecyclerView.setLayoutManager(layoutManager);
+
     }
 
     @Override
