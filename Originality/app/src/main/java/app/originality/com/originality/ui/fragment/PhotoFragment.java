@@ -110,4 +110,10 @@ public class PhotoFragment extends BaseFragment implements RecyclerViewItemClick
         JumpManager.jumpPhotoAlbumActivity(mAct, mPhotoGroupVOs.get(position));
         ToastUtils.showBigVioletToastOnBottom(mAct, "item" + position + " click ");
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        MediaManager.getInstance().stop();
+    }
 }

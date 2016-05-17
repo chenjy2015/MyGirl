@@ -36,6 +36,10 @@
             android:theme="@style/IMTheme.Transparent">
         </activity>
 
+        <!-- 媒体播放服务类 -->
+        <service android:name="app.originality.com.originality.util.media.MediaPlayerService" />
+
+
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
