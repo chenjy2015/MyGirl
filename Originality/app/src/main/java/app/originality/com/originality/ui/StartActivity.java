@@ -51,14 +51,14 @@ public class StartActivity extends BaseActivity {
             @Override
             public void run() {
                 //首次启动 进入引导界面
-//                if (OSPUtils.getFirstLauncher(StartActivity.this)) {
+                if (OSPUtils.getFirstLauncher(StartActivity.this)) {
                     JumpManager.jumpGuidePageActivity(StartActivity.this);
                     //非首次启动 判断用户是否为空 否则进入登录界面
 //                } else if (OApplication.getUserInfor() == null) {
 //                    JumpManager.jumpLoginActivity(StartActivity.this);
-//                } else {
-//                    JumpManager.jumpHomeActivity(StartActivity.this);
-//                }
+                } else {
+                    JumpManager.jumpHomeActivity(StartActivity.this);
+                }
                 StartActivity.this.finish();
             }
         }, 1000);

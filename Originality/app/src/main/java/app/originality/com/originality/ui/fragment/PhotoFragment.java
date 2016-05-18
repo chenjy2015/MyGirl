@@ -41,7 +41,7 @@ public class PhotoFragment extends BaseFragment implements RecyclerViewItemClick
 
     @Override
     protected void initEvent() {
-        MediaManager.getInstance().player(mAct, MediaType.MUSIC_RAW, MediaContact.AbsoluteMusic.MUSIC_ID_DRAGON_WARRIOR_RISE + "");
+
     }
 
     @Override
