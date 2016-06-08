@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Originality.iml" filepath="$PROJECT_DIR$/Originality.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/flipviewpager/flipviewpager.iml" filepath="$PROJECT_DIR$/flipviewpager/flipviewpager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/StaggeredGridViewlibrary/library.iml" filepath="$PROJECT_DIR$/StaggeredGridViewlibrary/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/residemenu/residemenu.iml" filepath="$PROJECT_DIR$/residemenu/residemenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/staggeredgridviewlibrary/staggeredgridviewlibrary.iml" filepath="$PROJECT_DIR$/staggeredgridviewlibrary/staggeredgridviewlibrary.iml" />
     </modules>

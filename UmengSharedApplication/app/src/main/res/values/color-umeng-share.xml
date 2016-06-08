@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 白色 -->
+    <color name="white_m">#f7f7f7</color>
+    <color name="white">#ffffff</color>
+
+    <!-- 半透明色 -->
+    <color name="translucent">#00000000</color>
+    <color name="translucent_1">#a0000000</color>
+    <color name="translucent_2">#cfffffff</color>
+
+    <!-- 灰色 -->
+    <color name="gray_l_txt">#6e6e6e</color>
+    <color name="gray_l_hint_txt">#b6b6b6</color>
+
+    <!-- 蓝色 -->
+    <color name="blue_l">#D2EDFF</color>
+    <color name="blue_m_txt">#0096ff</color>
+    <!-- second text color -->
+    <color name="second_text">#747474</color>
+    <color name="frame_stroke">#b8b8b8</color>
+
+    <!-- 分割线颜色 -->
+    <color name="underline_bg">#a7a7ab</color>
+
+</resources>

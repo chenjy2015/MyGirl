@@ -15,6 +15,7 @@ import app.originality.com.originality.R;
 import app.originality.com.originality.ui.fragment.AboutFragment;
 import app.originality.com.originality.ui.fragment.BaseFragment;
 import app.originality.com.originality.ui.fragment.HomeFragment;
+import app.originality.com.originality.ui.fragment.MusicListFragment;
 import app.originality.com.originality.ui.fragment.PersonalInforFragment;
 import app.originality.com.originality.ui.fragment.PhotoFragment;
 import app.originality.com.originality.util.StringHelper;
@@ -117,9 +118,11 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
         int tag = (Integer) view.getTag();
         if (tag == 10) {
             changeFragment(new PersonalInforFragment());
-        }else if(tag == 1){
+        } else if (tag == 0) {
+            changeFragment(new MusicListFragment());
+        } else if (tag == 1) {
             changeFragment(new PhotoFragment());
-        }else if(tag == 5){
+        } else if (tag == 5) {
             changeFragment(new AboutFragment());
         }
         resideMenu.closeMenu();

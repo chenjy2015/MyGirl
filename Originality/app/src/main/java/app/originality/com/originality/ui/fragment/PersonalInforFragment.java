@@ -1,5 +1,6 @@
 package app.originality.com.originality.ui.fragment;
 
+import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.view.View;
 import android.widget.EditText;
@@ -93,7 +94,9 @@ public class PersonalInforFragment extends BaseFragment implements View.OnClickL
         if (mPersonalVO == null) {
             mPersonalVO = new PersonalInforVO();
         }
-        Uri uri = Uri.parse(Contants.imageUrls[12]);
+//        Uri uri = Uri.parse(Contants.imageUrls[12]);
+//        mUserImg.setImageURI(uri);
+        Uri uri = Uri.parse("res://" + mAct.getPackageName() + R.drawable.girl_icon);
         mUserImg.setImageURI(uri);
     }
 

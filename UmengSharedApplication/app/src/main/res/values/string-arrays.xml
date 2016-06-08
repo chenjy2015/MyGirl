@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="share_platform">
+        <item>QQ</item>
+        <item>QQ空间</item>
+        <item>微信</item>
+        <item>微信朋友圈</item>
+        <item>新浪微博</item>
+    </string-array>
+</resources>

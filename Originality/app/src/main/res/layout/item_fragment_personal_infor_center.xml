@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:hint="男"
+                android:hint="女"
                 android:textSize="@dimen/personal_item_text_size" />
 
         </LinearLayout>
@@ -121,7 +121,7 @@
                 android:layout_marginLeft="20dp"
                 android:background="@null"
                 android:gravity="right"
-                android:hint="诚实 勇敢 果断 ..."
+                android:hint="乐观 诚实 勇敢 自信 果断 ..."
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textSize="@dimen/personal_item_text_size" />
@@ -175,7 +175,7 @@
                 android:layout_marginLeft="20dp"
                 android:background="@null"
                 android:gravity="right"
-                android:hint="澳大利亚，文莱，新加坡"
+                android:hint="广西桂林，浙江西湖，云南大理，江西九寨沟.."
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textSize="@dimen/personal_item_text_size" />
