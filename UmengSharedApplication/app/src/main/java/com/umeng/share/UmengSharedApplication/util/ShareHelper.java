@@ -36,7 +36,7 @@ public class ShareHelper {
      */
     public static void init() {
         //各个平台的配置，建议放在全局Application或者程序入口
-        //微信    wx12342956d1cab4f9,a5ae111de7d9ea137e88a5e02c07c94d
+        //微信    wxe8260700ad819b4a,b92a55497651c86d5eaf55a1556c4065
         PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
         //豆瓣RENREN平台目前只能在服务器端配置
         //新浪微博
@@ -101,8 +101,8 @@ public class ShareHelper {
         String[] descriptions = activity.getResources().getStringArray(R.array.share_platform);
         shareAction.withTitle(SHARE_TITLE);
         shareAction.withText(SHARE_CONTENT);
-        mUMImage = new UMImage(activity,"http://img4.duitang.com/uploads/blog/201311/04/20131104193715_NCexN.thumb.jpeg");
-        shareAction.withMedia(mUMImage);
+//        mUMImage = new UMImage(activity,"http://img4.duitang.com/uploads/blog/201311/04/20131104193715_NCexN.thumb.jpeg");
+//        shareAction.withMedia(mUMImage);
         //QQ
         if (action.equals(descriptions[0])) {
             shareAction.setPlatform(SHARE_MEDIA.QQ);
