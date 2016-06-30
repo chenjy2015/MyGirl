@@ -41,9 +41,17 @@ public abstract class BaseActivity extends Activity {
      */
     protected SystemBarTintManager mTintManager;
 
+    /**
+     * 在oncreate之前调用此方法
+     */
+    protected void preCreate() {
+        //        Window win = getWindow();
+        //        win.addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        preCreate();
         super.onCreate(savedInstanceState);
         View view = View.inflate(getApplicationContext(), R.layout.activity_base, null);
         // 布局内容会从actionbar以下开始

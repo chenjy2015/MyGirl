@@ -2,6 +2,13 @@ package app.originality.com.originality.modules.photo.bean;
 
 import java.io.Serializable;
 
+/**
+ * @author cjy
+ * @version V1.0
+ * @company Chenjy_Studio
+ * @Description 相片详细信息
+ * @date 2016/6/30 15:19
+ */
 public class PhotoBeanVO implements Serializable {
 
     private String label;       //相片标签

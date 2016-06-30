@@ -23,6 +23,19 @@ public class EventFactory {
         public void loaderFail() {
 
         }
-
     }
+
+
+    /**
+     * 图片长按事件
+     */
+    public static class ImageLongTouchEvent extends BaseEvent {
+
+        public int position;
+
+        public ImageLongTouchEvent(int position) {
+            this.position = position;
+        }
+    }
+
 }

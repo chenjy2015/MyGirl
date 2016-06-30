@@ -25,20 +25,20 @@
         <activity android:name=".ui.GuidePageActivity" />
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".modules.photo.ui.PhotoListActivity" />
+        <activity
+            android:name=".modules.photo.ui.VerticalDisplayPhotoListActivity"
+            android:launchMode="singleTask" />
         <activity
             android:name=".modules.photo.ui.SpaceImageDetailActivity"
-            android:theme="@style/IMTheme.Transparent">
-        </activity>
+            android:theme="@style/IMTheme.Transparent" />
 
         <activity
-            android:name=".modules.photo.ui.SpaceImageDetailActivity1"
-            android:theme="@style/IMTheme.Transparent">
-        </activity>
+            android:name=".modules.photo.ui.HorizontalDisplayPhotoListActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/IMTheme.Transparent" />
 
         <!-- 媒体播放服务类 -->
         <service android:name="app.originality.com.originality.util.media.MediaPlayerService" />
-
 
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for

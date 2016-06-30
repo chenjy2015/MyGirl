@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_layout_color"
+    android:orientation="vertical">
+
+    <app.originality.com.originality.widget.zoomimage.SmoothImageView
+        android:id="@+id/id_smooth_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <share.umeng.com.parallax_viewpager_library.ParallaxViewPager
+        android:id="@+id/id_parallax_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        pv:interpolator="@anim/decelerate_interpolator"
+        pv:mode="left_overlay"
+        pv:outset="62%"
+        pv:shadow_width="30dp" />
+
+</LinearLayout>

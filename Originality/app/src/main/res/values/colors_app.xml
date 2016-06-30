@@ -6,8 +6,12 @@
     <color name="underline_bg">#a7a7ab</color>
 
     <!-- title -->
-    <color name="title_layout_color">#eaeaea</color>
+    <color name="title_layout_color">#999999</color>
     <color name="title_layout_pressed_color">#aaaaaa</color>
     <color name="default_activity_background_color">#EFEFEF</color>
+
+  <!--  <color name="title_layout_color">#999999</color>
+    <color name="title_layout_pressed_color">#999999</color>
+    <color name="default_activity_background_color">#aaaaaa</color>-->
 
 </resources>

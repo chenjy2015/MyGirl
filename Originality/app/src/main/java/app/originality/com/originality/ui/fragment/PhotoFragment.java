@@ -20,6 +20,14 @@ import app.originality.com.originality.widget.recycler_divider_itemDecoration.Ho
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @company Chenjy_Studio
+ * @Description 相册列表界面
+ * @author cjy
+ * @date 2016/6/28 11:28
+ * @version V1.0
+ */
 public class PhotoFragment extends BaseFragment implements RecyclerViewItemClickListenner {
 
     private RecyclerView mRecyclerView;

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".modules.photo.ui.PhotoListActivity">
+    android:background="@color/title_layout_color"
+    tools:context=".modules.photo.ui.VerticalDisplayPhotoListActivity">
 
     <ListView
         android:id="@+id/friends"
@@ -31,5 +32,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:item_margin="8dp"
-        app:column_count="2" />
+        app:column_count="3" />
 </RelativeLayout>

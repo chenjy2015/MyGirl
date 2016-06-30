@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 
 import app.originality.com.originality.bean.PhotoGroupVO;
-import app.originality.com.originality.modules.photo.bean.PhotoBeanVO;
-import app.originality.com.originality.modules.photo.ui.PhotoListActivity;
+import app.originality.com.originality.bean.SpaceImageVO;
+import app.originality.com.originality.modules.photo.ui.VerticalDisplayPhotoListActivity;
+import app.originality.com.originality.modules.photo.ui.SpaceImageDetailActivity;
+import app.originality.com.originality.modules.photo.ui.HorizontalDisplayPhotoListActivity;
 import app.originality.com.originality.ui.GuidePageActivity;
 import app.originality.com.originality.ui.HomeActivity;
 import app.originality.com.originality.ui.LoginActivity;
@@ -59,8 +61,44 @@ public class JumpManager {
      * @param context
      */
     public static void jumpPhotoAlbumActivity(Context context, PhotoGroupVO photoGroupVO) {
-        Intent intent = new Intent(context, PhotoListActivity.class);
-        intent.putExtra("PhotoGroupVO",photoGroupVO);
+        jumpVerticalDisplayPhotoListActivity(context, photoGroupVO);
+    }
+
+
+    /**
+     * 进入大图片浏览界面
+     *
+     * @param context
+     * @param spaceImageVO
+     */
+    public static void jumpSpaceImageActivity(Context context, SpaceImageVO spaceImageVO) {
+        Intent intent = new Intent(context, SpaceImageDetailActivity.class);
+        intent.putExtra("SpaceImageVO", spaceImageVO);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 进入横向浏览图片模式 浏览图片列表
+     *
+     * @param context
+     * @param photoGroupVO
+     */
+    public static void jumpHorizontalDisplayPhotoListActivity(Context context, PhotoGroupVO photoGroupVO, SpaceImageVO mSpaceImageVO) {
+        Intent intent = new Intent(context, HorizontalDisplayPhotoListActivity.class);
+        intent.putExtra("PhotoGroupVO", photoGroupVO);
+        intent.putExtra("SpaceImageVO", mSpaceImageVO);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 进入纵向浏览图片模式 浏览图片列表
+     *
+     * @param context
+     * @param photoGroupVO
+     */
+    public static void jumpVerticalDisplayPhotoListActivity(Context context, PhotoGroupVO photoGroupVO) {
+        Intent intent = new Intent(context, VerticalDisplayPhotoListActivity.class);
+        intent.putExtra("PhotoGroupVO", photoGroupVO);
         context.startActivity(intent);
     }
 

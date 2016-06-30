@@ -1,0 +1,147 @@
+package app.originality.com.originality.modules.photo.ui;
+
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+
+import com.etsy.android.grid.StaggeredGridView;
+import com.facebook.drawee.view.SimpleDraweeView;
+
+
+import app.originality.com.originality.R;
+import app.originality.com.originality.bean.PhotoGroupVO;
+import app.originality.com.originality.bean.SpaceImageVO;
+import app.originality.com.originality.config.Contants;
+import app.originality.com.originality.modules.photo.adapter.PhotoListAdapter;
+import app.originality.com.originality.modules.photo.bean.PhotoBeanVO;
+import app.originality.com.originality.modules.photo.views.ScrollDialog;
+import app.originality.com.originality.ui.BaseActivity;
+import app.originality.com.originality.util.AndroidSystemHelper;
+import app.originality.com.originality.util.DataTimeUtils;
+import app.originality.com.originality.util.JumpManager;
+
+import java.util.ArrayList;
+
+/**
+ * @author cjy
+ * @version V1.0
+ * @company Chenjy_Studio
+ * @Description 纵向浏览图片模式
+ * @date 2016/6/30 14:55
+ */
+public class VerticalDisplayPhotoListActivity extends BaseActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+
+    private StaggeredGridView mStaggeredGridView;
+    private PhotoListAdapter mPhotoListAdapter;
+    private ArrayList<PhotoBeanVO> mPhotoBeanVOs;
+    private PhotoGroupVO mPhotoGroupVO;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        init();
+        loadData();
+    }
+
+    @Override
+    protected int setView() {
+        return R.layout.activity_photo_list;
+    }
+
+    @Override
+    protected void findViews() {
+        mStaggeredGridView = (StaggeredGridView) this.findViewById(R.id.id_photo_gridview);
+    }
+
+    @Override
+    protected void initEvent() {
+
+    }
+
+    @Override
+    protected void init() {
+        mPhotoGroupVO = (PhotoGroupVO) getIntent().getSerializableExtra("PhotoGroupVO");
+        mTitleBar.setRightText("横向浏览");
+        mTitleBar.setRightTextSize(AndroidSystemHelper.dp2px(14, this));
+        mTitleBar.setRightLayoutOnClickListenner(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JumpManager.jumpHorizontalDisplayPhotoListActivity(VerticalDisplayPhotoListActivity.this, mPhotoGroupVO, null);
+            }
+        });
+    }
+
+    @Override
+    protected void loadData() {
+        mPhotoBeanVOs = new ArrayList<PhotoBeanVO>();
+        for (int i = 0; i < Contants.imageUrls.length; i++) {
+            PhotoBeanVO photoBeanVO = new PhotoBeanVO();
+            photoBeanVO.setCreateTime(DataTimeUtils.getStringDate(System.currentTimeMillis()));
+            photoBeanVO.setGroupId(mPhotoGroupVO.getGroupId());
+            photoBeanVO.setGroupName(mPhotoGroupVO.getGroupDescription());
+            photoBeanVO.setLabel("风景" + (i + 1));
+            photoBeanVO.setUrl(Contants.imageUrls[i]);
+            mPhotoBeanVOs.add(photoBeanVO);
+        }
+        mPhotoListAdapter = new PhotoListAdapter(VerticalDisplayPhotoListActivity.this, mPhotoBeanVOs);
+        mStaggeredGridView.setAdapter(mPhotoListAdapter);
+        mStaggeredGridView.setOnItemClickListener(this);
+        mStaggeredGridView.setOnItemLongClickListener(this);
+    }
+
+
+    private String fliter(int size, int count) {
+        StringBuilder builder = new StringBuilder();
+        for (int j = size, max = (count * 1234) % 500; j < max; j++)
+            builder.append(count).append(' ');
+        return builder.toString();
+    }
+
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        SpaceImageVO spaceImageVO = initSpaceImageVO(position, view);
+        JumpManager.jumpSpaceImageActivity(this, spaceImageVO);
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        JumpManager.jumpHorizontalDisplayPhotoListActivity(this, mPhotoGroupVO, initSpaceImageVO(position, view));
+        return true;
+    }
+
+    public void showScrollDialog(int position, View view) {
+        ScrollDialog scrollDialog = new ScrollDialog(VerticalDisplayPhotoListActivity.this);
+        scrollDialog.show();
+        scrollDialog.setImageUrl(Contants.imageUrls[position]);
+//        SimpleDraweeView imageView = (SimpleDraweeView) view.findViewById(R.id.id_photo_img);
+        ImageView imageView = (ImageView) view.findViewById(R.id.id_photo_img);
+        int[] location = new int[2];
+        imageView.getLocationOnScreen(location);
+        scrollDialog.setSommthImage(location[0], location[1], imageView.getMeasuredWidth(), imageView.getMeasuredHeight());
+    }
+
+
+    /**
+     * 提取 图片信息
+     *
+     * @param position
+     * @param parentView
+     * @return
+     */
+    public SpaceImageVO initSpaceImageVO(int position, View parentView) {
+        SimpleDraweeView imageView = (SimpleDraweeView) parentView.findViewById(R.id.id_photo_img);
+        int[] location = new int[2];
+        imageView.getLocationOnScreen(location);
+        SpaceImageVO spaceImageVO = new SpaceImageVO();
+        spaceImageVO.setImageUrl(Contants.imageUrls[position]);
+        spaceImageVO.setPosition(position);
+        spaceImageVO.setLocationX(location[0]);
+        spaceImageVO.setLocationY(location[1]);
+        spaceImageVO.setWidth(imageView.getWidth());
+        spaceImageVO.setHeight(imageView.getHeight());
+        return spaceImageVO;
+    }
+}

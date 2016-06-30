@@ -51,4 +51,5 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.9.0+'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile project(':staggeredgridviewlibrary')
+    compile project(':parallax_viewpager_library')
 }
