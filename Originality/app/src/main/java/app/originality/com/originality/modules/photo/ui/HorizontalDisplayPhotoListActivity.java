@@ -70,7 +70,6 @@ public class HorizontalDisplayPhotoListActivity extends BaseActivity implements 
     @Override
     protected void init() {
         mTitleBar.setRightText("纵向浏览");
-        mTitleBar.setRightTextSize(AndroidSystemHelper.dp2px(14, this));
         mTitleBar.setRightLayoutOnClickListenner(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,9 +83,9 @@ public class HorizontalDisplayPhotoListActivity extends BaseActivity implements 
 
     @Override
     protected void initEvent() {
-        if(mSpaceImageVO == null){
+        if (mSpaceImageVO == null) {
             updateUI(1);
-            return ;
+            return;
         }
         mSmoothImageView.setOriginalInfo(mSpaceImageVO.getWidth(), mSpaceImageVO.getHeight(), mSpaceImageVO.getLocationX(), mSpaceImageVO.getLocationY());
         mSmoothImageView.transformIn();
@@ -141,7 +140,7 @@ public class HorizontalDisplayPhotoListActivity extends BaseActivity implements 
 
     @Override
     public void onBackPressed() {
-        if(mSpaceImageVO == null){
+        if (mSpaceImageVO == null) {
             finish();
             return;
         }
@@ -202,13 +201,6 @@ public class HorizontalDisplayPhotoListActivity extends BaseActivity implements 
         EventBus.getDefault().unregister(this);
     }
 
-    /**
-     * EventBus 事件接收
-     *
-     * @param imageLongTouchEvent
-     */
-    public void onEventMainThread(EventFactory.ImageLongTouchEvent imageLongTouchEvent) {
-    }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

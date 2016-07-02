@@ -1,6 +1,7 @@
 package app.originality.com.originality.factory;
 
 import android.graphics.Bitmap;
+import android.view.View;
 
 public class EventFactory {
 
@@ -27,14 +28,30 @@ public class EventFactory {
 
 
     /**
-     * 图片长按事件
+     * item 长按事件
      */
-    public static class ImageLongTouchEvent extends BaseEvent {
+    public static class OnItemLongClickTouchEvent extends BaseEvent {
 
         public int position;
+        public View view;
 
-        public ImageLongTouchEvent(int position) {
+        public OnItemLongClickTouchEvent(int position, View view) {
             this.position = position;
+            this.view = view;
+        }
+    }
+
+
+    /**
+     * item 点击事件
+     */
+    public static class OnItemClickTouchEvent extends BaseEvent {
+        public int position;
+        public View view;
+
+        public OnItemClickTouchEvent(int position, View view) {
+            this.position = position;
+            this.view = view;
         }
     }
 

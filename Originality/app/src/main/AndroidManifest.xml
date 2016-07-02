@@ -31,6 +31,9 @@
         <activity
             android:name=".modules.photo.ui.SpaceImageDetailActivity"
             android:theme="@style/IMTheme.Transparent" />
+        <activity
+            android:name=".modules.photo.ui.SpaceImageDetailActivity1"
+            android:theme="@style/IMTheme.Transparent" />
 
         <activity
             android:name=".modules.photo.ui.HorizontalDisplayPhotoListActivity"

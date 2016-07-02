@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import app.originality.com.originality.bean.PhotoGroupVO;
 import app.originality.com.originality.bean.SpaceImageVO;
+import app.originality.com.originality.modules.photo.ui.SpaceImageDetailActivity1;
 import app.originality.com.originality.modules.photo.ui.VerticalDisplayPhotoListActivity;
 import app.originality.com.originality.modules.photo.ui.SpaceImageDetailActivity;
 import app.originality.com.originality.modules.photo.ui.HorizontalDisplayPhotoListActivity;

@@ -40,7 +40,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 //    compile files('libs/android-support-v4.jar')
     compile files('libs/gson-2.2.4.jar')
-    compile files('libs/imageloader.jar')
+//    compile files('libs/imageloader.jar')
+    compile files('libs/universal-image-loader-1.9.0.jar')
     compile files('libs/EventBus.jar')
     compile project(':residemenu')
 //    compile project(':volley')

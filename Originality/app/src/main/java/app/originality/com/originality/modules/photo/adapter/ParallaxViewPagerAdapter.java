@@ -51,15 +51,7 @@ public class ParallaxViewPagerAdapter extends PagerAdapter {
         ImageViewTouch imageView = (ImageViewTouch) view.findViewById(R.id.id_touch_img);
         PhotoBeanVO photoBeanVO = mData.get(position);
         ImageLoader.getInstance().displayImage(photoBeanVO.getUrl(), imageView);
-        container.addView(view, LinearLayout.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);
-        imageView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                EventBus.getDefault().post(new EventFactory.ImageLongTouchEvent(position));
-                return false;
-            }
-        });
+        container.addView(view);
         return view;
     }
 

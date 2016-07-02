@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <!--<com.facebook.drawee.view.SimpleDraweeView
@@ -29,22 +31,32 @@
         fresco:roundingBorderColor="@color/white"
         fresco:roundingBorderWidth="2dp" />-->
 
-        <!-- <ImageView
-             android:id="@+id/id_photo_img"
-             android:layout_width="match_parent"
-             android:scaleType="fitXY"
-             android:layout_height="150dp" />-->
+    <!-- <ImageView
+         android:id="@+id/id_photo_img"
+         android:layout_width="match_parent"
+         android:scaleType="fitXY"
+         android:layout_height="150dp" />-->
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/id_photo_img"
+    <LinearLayout
+        android:id="@+id/id_img_layout"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:scaleType="fitXY" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_image_shadow"
+        android:paddingBottom="3dp"
+        android:paddingRight="3dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/id_photo_img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/id_img_description_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:padding="5dp"

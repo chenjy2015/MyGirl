@@ -61,7 +61,7 @@ public class SpaceImageDetailActivity extends BaseActivity implements View.OnLon
         mSpaceImageVO = (SpaceImageVO) getIntent().getSerializableExtra("SpaceImageVO");
         imageView.setOriginalInfo(mSpaceImageVO.getWidth(), mSpaceImageVO.getHeight(), mSpaceImageVO.getLocationX(), mSpaceImageVO.getLocationY());
         imageView.transformIn();
-        imageView.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
+//        imageView.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
         imageView.getLayoutParams().width = -1;
         imageView.getLayoutParams().height = -1;
         imageView.setScaleType(ScaleType.FIT_CENTER);
