@@ -3,9 +3,12 @@ package app.originality.com.originality.util;
 import android.content.Context;
 import android.content.Intent;
 
+import com.bm.library.Info;
+
 import app.originality.com.originality.bean.PhotoGroupVO;
 import app.originality.com.originality.bean.SpaceImageVO;
 import app.originality.com.originality.modules.photo.ui.SpaceImageDetailActivity1;
+import app.originality.com.originality.modules.photo.ui.SpaceImageDetailActivity2;
 import app.originality.com.originality.modules.photo.ui.VerticalDisplayPhotoListActivity;
 import app.originality.com.originality.modules.photo.ui.SpaceImageDetailActivity;
 import app.originality.com.originality.modules.photo.ui.HorizontalDisplayPhotoListActivity;
@@ -77,6 +80,17 @@ public class JumpManager {
         intent.putExtra("SpaceImageVO", spaceImageVO);
         context.startActivity(intent);
     }
+
+    /**
+     * 进入大图片浏览界面
+     *
+     * @param context
+     */
+    public static void jumpSpaceImageActivity2(Context context) {
+        Intent intent = new Intent(context, SpaceImageDetailActivity2.class);
+        context.startActivity(intent);
+    }
+
 
     /**
      * 进入横向浏览图片模式 浏览图片列表

@@ -36,10 +36,6 @@ public class OApplication extends Application {
         initImageLoadConfig();
     }
 
-    public static void init() {
-        mUserInfor = OSPUtils.getUserInfor(mContext);
-    }
-
     /**
      * 保存用户信息
      *
@@ -48,6 +44,10 @@ public class OApplication extends Application {
     public static void setUserInfor(UserInfor userInfor) {
         mUserInfor = userInfor;
         OSPUtils.setUserInfor(mContext, userInfor);
+    }
+
+    public static void init() {
+        mUserInfor = OSPUtils.getUserInfor(mContext);
     }
 
     /**
@@ -63,7 +63,6 @@ public class OApplication extends Application {
     }
 
     private void initImageLoadConfig() {
-        @SuppressWarnings("deprecation")
         DisplayImageOptions options = new DisplayImageOptions.Builder()
                 .showImageForEmptyUri(R.mipmap.ic_empty) // 设置图片Uri为空或是错误的时候显示的图片
                 .showImageOnFail(R.mipmap.ic_error) // 设置图片加载或解码过程中发生错误显示的图片

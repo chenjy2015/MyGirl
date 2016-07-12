@@ -13,7 +13,7 @@
     <app.originality.com.originality.widget.HorizontalProgressBar
         android:id="@+id/id_horiziontal_progress"
         android:layout_width="300dp"
-        android:layout_height="35dp"
+        android:layout_height="25dp"
         android:layout_gravity="center"
         android:padding="15dp" />
 

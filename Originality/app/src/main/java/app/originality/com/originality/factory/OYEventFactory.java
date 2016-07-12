@@ -3,7 +3,11 @@ package app.originality.com.originality.factory;
 import android.graphics.Bitmap;
 import android.view.View;
 
-public class EventFactory {
+import com.bm.library.Info;
+
+import app.originality.com.originality.bean.SpaceImageVO;
+
+public class OYEventFactory {
 
     /**
      * 摇一摇状态处理更新事件
@@ -48,10 +52,14 @@ public class EventFactory {
     public static class OnItemClickTouchEvent extends BaseEvent {
         public int position;
         public View view;
+        public SpaceImageVO spaceImageVO;
+        public Info photoViewInfo;
 
-        public OnItemClickTouchEvent(int position, View view) {
+        public OnItemClickTouchEvent(int position, View view, SpaceImageVO spaceImageVO, Info photoViewInfo) {
             this.position = position;
             this.view = view;
+            this.spaceImageVO = spaceImageVO;
+            this.photoViewInfo = photoViewInfo;
         }
     }
 

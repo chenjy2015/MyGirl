@@ -110,10 +110,6 @@ public class SpaceImageDetailActivity extends BaseActivity implements View.OnLon
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.id_touch_img:
-                break;
-        }
     }
 
 }

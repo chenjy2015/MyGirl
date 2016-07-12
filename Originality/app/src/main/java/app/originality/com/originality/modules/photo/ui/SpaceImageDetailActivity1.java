@@ -84,10 +84,6 @@ public class SpaceImageDetailActivity1 extends Activity implements View.OnLongCl
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.id_touch_img:
-                break;
-        }
     }
 
 }

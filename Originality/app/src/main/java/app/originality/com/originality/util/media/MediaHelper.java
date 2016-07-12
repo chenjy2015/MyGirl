@@ -229,4 +229,7 @@ public class MediaHelper extends ActivityMethod {
         }
     }
 
+    public int getCurrentPosition() {
+        return mMediaPlayer.getCurrentPosition();
+    }
 }

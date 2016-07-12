@@ -14,11 +14,9 @@ import app.originality.com.originality.R;
 import app.originality.com.originality.bean.PhotoGroupVO;
 import app.originality.com.originality.bean.SpaceImageVO;
 import app.originality.com.originality.config.Contants;
-import app.originality.com.originality.factory.EventFactory;
 import app.originality.com.originality.modules.photo.adapter.ParallaxViewPagerAdapter;
 import app.originality.com.originality.modules.photo.bean.PhotoBeanVO;
 import app.originality.com.originality.ui.BaseActivity;
-import app.originality.com.originality.util.AndroidSystemHelper;
 import app.originality.com.originality.util.DataTimeUtils;
 import app.originality.com.originality.util.JumpManager;
 import app.originality.com.originality.widget.zoomimage.SmoothImageView;
@@ -27,7 +25,6 @@ import share.umeng.com.parallax_viewpager_library.ParallaxViewPager;
 
 import android.os.Handler;
 
-import java.util.List;
 import java.util.ArrayList;
 
 /**
@@ -190,15 +187,8 @@ public class HorizontalDisplayPhotoListActivity extends BaseActivity implements 
     }
 
     @Override
-    protected void preCreate() {
-        super.preCreate();
-        EventBus.getDefault().register(this);
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 
 
@@ -211,4 +201,7 @@ public class HorizontalDisplayPhotoListActivity extends BaseActivity implements 
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
         return false;
     }
+
+
+
 }

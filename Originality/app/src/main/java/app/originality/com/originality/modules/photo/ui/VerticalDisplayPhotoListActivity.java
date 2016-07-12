@@ -13,13 +13,14 @@ import app.originality.com.originality.R;
 import app.originality.com.originality.bean.PhotoGroupVO;
 import app.originality.com.originality.bean.SpaceImageVO;
 import app.originality.com.originality.config.Contants;
-import app.originality.com.originality.factory.EventFactory;
+import app.originality.com.originality.factory.OYEventFactory;
 import app.originality.com.originality.modules.photo.adapter.PhotoListAdapter;
 import app.originality.com.originality.modules.photo.bean.PhotoBeanVO;
 import app.originality.com.originality.modules.photo.views.ScrollDialog;
 import app.originality.com.originality.ui.BaseActivity;
 import app.originality.com.originality.util.DataTimeUtils;
 import app.originality.com.originality.util.JumpManager;
+import app.originality.com.originality.util.LogOut;
 import de.greenrobot.event.EventBus;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ import java.util.ArrayList;
  * @Description 纵向浏览图片模式
  * @date 2016/6/30 14:55
  */
-public class VerticalDisplayPhotoListActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class VerticalDisplayPhotoListActivity extends BaseActivity {
 
     private StaggeredGridView mStaggeredGridView;
     private PhotoListAdapter mPhotoListAdapter;
@@ -39,8 +40,8 @@ public class VerticalDisplayPhotoListActivity extends BaseActivity implements Ad
     private PhotoGroupVO mPhotoGroupVO;
 
     @Override
-    public void recreate() {
-        super.recreate();
+    public void preCreate() {
+        super.preCreate();
         EventBus.getDefault().register(this);
     }
 
@@ -55,9 +56,9 @@ public class VerticalDisplayPhotoListActivity extends BaseActivity implements Ad
      *
      * @param event
      */
-    public void onEventMainThread(EventFactory.OnItemClickTouchEvent event) {
-        SpaceImageVO spaceImageVO = initSpaceImageVO(event.position, event.view);
-        JumpManager.jumpSpaceImageActivity(this, spaceImageVO);
+    public void onEventMainThread(OYEventFactory.OnItemClickTouchEvent event) {
+//        SpaceImageVO spaceImageVO = initSpaceImageVO(event.position, event.view);
+//        JumpManager.jumpSpaceImageActivity(this, spaceImageVO);
     }
 
     /**
@@ -65,9 +66,10 @@ public class VerticalDisplayPhotoListActivity extends BaseActivity implements Ad
      *
      * @param event
      */
-    public void onEventMainThread(EventFactory.OnItemLongClickTouchEvent event) {
+    public void onEventMainThread(OYEventFactory.OnItemLongClickTouchEvent event) {
 
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,20 +123,6 @@ public class VerticalDisplayPhotoListActivity extends BaseActivity implements Ad
 //        mStaggeredGridView.setOnItemLongClickListener(this);
     }
 
-
-    private String fliter(int size, int count) {
-        StringBuilder builder = new StringBuilder();
-        for (int j = size, max = (count * 1234) % 500; j < max; j++)
-            builder.append(count).append(' ');
-        return builder.toString();
-    }
-
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        SpaceImageVO spaceImageVO = initSpaceImageVO(position, view);
-        JumpManager.jumpSpaceImageActivity(this, spaceImageVO);
-    }
 
     public void showScrollDialog(int position, View view) {
         ScrollDialog scrollDialog = new ScrollDialog(VerticalDisplayPhotoListActivity.this);
