@@ -18,10 +18,10 @@ import app.originality.com.originality.util.LogOut;
 public class MediaPlayerService extends Service {
 
 
-    private  MediaHelper mMediaHelper;
-    private  MediaType mediaType;
+    private MediaHelper mMediaHelper;
+    private MediaType mediaType;
     private String path;
-
+    private MediaPlayerProgressListenner mediaPlayerProgressListenner;
 
     @Override
     public void onCreate() {
@@ -31,14 +31,14 @@ public class MediaPlayerService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        try{
+        try {
             mediaType = (MediaType) intent.getSerializableExtra("MediaType");
             path = intent.getStringExtra("path");
-            mMediaHelper.player(mediaType, path);
-        }catch (Exception e){
+            mediaPlayerProgressListenner = (MediaPlayerProgressListenner) intent.getSerializableExtra("MediaPlayerProgressListenner");
+            mMediaHelper.player(mediaType, path, mediaPlayerProgressListenner);
+        } catch (Exception e) {
             LogOut.printStackTrace(e);
         }
-
         return super.onStartCommand(intent, flags, startId);
 
     }
@@ -46,7 +46,7 @@ public class MediaPlayerService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(mMediaHelper != null){
+        if (mMediaHelper != null) {
             mMediaHelper.onDestroy();
         }
     }

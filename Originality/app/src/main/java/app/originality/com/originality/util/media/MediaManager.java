@@ -32,9 +32,9 @@ public class MediaManager {
      * @param mMediaType
      * @param path
      */
-    public void player(Context context, MediaType mMediaType, String path) {
+    public void player(Context context, MediaType mMediaType, String path, MediaPlayerProgressListenner mediaPlayerProgressListenner) {
         mContext = context;
-        intentService(mMediaType, path);
+        intentService(mMediaType, path, mediaPlayerProgressListenner);
     }
 
     /**
@@ -47,12 +47,13 @@ public class MediaManager {
         }
     }
 
-    private void intentService(MediaType mMediaType, String path) {
+    private void intentService(MediaType mMediaType, String path, MediaPlayerProgressListenner mediaPlayerProgressListenner) {
         stop();
         if (mMediaPlayerServiceIntent == null) {
             mMediaPlayerServiceIntent = new Intent(mContext, MediaPlayerService.class);
             mMediaPlayerServiceIntent.putExtra("MediaType", mMediaType);
             mMediaPlayerServiceIntent.putExtra("path", path);
+            mMediaPlayerServiceIntent.putExtra("MediaPlayerProgressListenner", mediaPlayerProgressListenner);
             mContext.startService(mMediaPlayerServiceIntent);
         }
     }

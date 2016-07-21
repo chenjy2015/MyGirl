@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import app.originality.com.originality.util.AndroidSystemHelper;
+import app.originality.com.originality.util.ProgressCalcUtils;
 
 
 /**
@@ -28,6 +29,7 @@ public class HorizontalProgressBar extends View {
     private int mHeight;                            //进度条高度
     private int mMaxProgress = 100;                 //进度条最大值
     private int mProgress;                          //当前进度值
+    private int mProgressType;                      //0 数值进度值%  1 时间进度值
     private int startX;
     private int startY;
 
@@ -101,8 +103,28 @@ public class HorizontalProgressBar extends View {
         paint.setStrokeWidth(10);// 设置画笔宽度
         paint.setColor(Color.parseColor(mProgressTextColor));
         paint.setTextSize(45);
-        canvas.drawText(mProgress + "%", ((float) mProgress / mMaxProgress) * mWidth - 45,
-                mHeight + 55, paint);
+        //数值进度值
+        if (mProgressType == 0) {
+            canvas.drawText(mProgress + "%", ((float) mProgress / mMaxProgress) * mWidth - 45,
+                    mHeight + 55, paint);
+        } else {
+            canvas.drawText(getProgressByTime(), ((float) mProgress / mMaxProgress) * mWidth - 45,
+                    mHeight + 55, paint);
+        }
+    }
+
+    private String getProgressByTime() {
+        String seekToStr = "";
+        ProgressCalcUtils dateTimeUtils = new ProgressCalcUtils(mProgress / 1000);
+        String hours = (dateTimeUtils.getHours() <= 0 ? "" : dateTimeUtils.getHours()) + "";
+        String minutes = dateTimeUtils.getMINUTES() <= 9 ? "0" + dateTimeUtils.getMINUTES() : dateTimeUtils.getMINUTES() + "";
+        String seconds = dateTimeUtils.getSecond() <= 9 ? "0" + dateTimeUtils.getSecond() : dateTimeUtils.getSecond() + "";
+        if (hours.equals("")) {
+            seekToStr = minutes + ":" + seconds;
+        } else {
+            seekToStr = hours + ":" + minutes + ":" + seconds;
+        }
+        return seekToStr;
     }
 
     @Override
@@ -159,5 +181,14 @@ public class HorizontalProgressBar extends View {
     public void setProgress(int progress) {
         mProgress = progress;
         invalidate();
+    }
+
+    /**
+     * 0 数值进度值%  1 时间进度值
+     *
+     * @param type
+     */
+    public void setProgressType(int type) {
+        this.mProgressType = type;
     }
 }
