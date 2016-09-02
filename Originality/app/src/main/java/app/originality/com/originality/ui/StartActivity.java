@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import app.originality.com.originality.R;
-import app.originality.com.originality.application.OApplication;
 import app.originality.com.originality.storage.OSPUtils;
 import app.originality.com.originality.util.JumpManager;
 
@@ -63,4 +62,5 @@ public class StartActivity extends BaseActivity {
             }
         }, 1000);
     }
+
 }

@@ -45,4 +45,10 @@
     <!-- AboutFragment -->
     <string name="about_description1">专属于您的APP  一路走过的旅程 我们为您记录</string>
 
+    <!-- MusicFragment -->
+    <string name="music_name">歌名</string>
+    <string name="music_particular_year">年份</string>
+    <string name="music_singer">歌手</string>
+    <string name="music_area">区域</string>
+    <string name="music_size">大小</string>
 </resources>

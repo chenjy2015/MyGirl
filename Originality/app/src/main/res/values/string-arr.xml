@@ -15,4 +15,59 @@
         <item>我的收藏</item>
         <item>关于</item>
     </array>
+
+    <array name="music_list_name">
+        <item>英雄的黎明</item>
+        <item>挪威的森林</item>
+        <item>故乡的原风景</item>
+        <item>吻别</item>
+        <item>定情</item>
+        <item>爱的比你深</item>
+        <item>完美生活</item>
+        <item>悟空</item>
+    </array>
+
+    <array name="music_list_local_resource">
+        <item>dawn_of_heroes.mp3</item>
+        <item>deep_forest_in_norway.mp3</item>
+        <item>dragon_warrior_rise.mp3</item>
+        <item>kiss_goodbye.mp3</item>
+        <item>love.mp3</item>
+        <item>love_is_deeper_than_you.mp3</item>
+        <item>perfect_life.mp3</item>
+        <item>wukong.mp3</item>
+    </array>
+
+    <array name="music_list_singer">
+        <item>横山菁儿</item>
+        <item>伍佰</item>
+        <item>宗次郎</item>
+        <item>张学友</item>
+        <item>黄沾</item>
+        <item>张学友</item>
+        <item>许巍</item>
+        <item>戴荃</item>
+    </array>
+
+    <array name="music_list_year">
+        <item>1988</item>
+        <item>1996</item>
+        <item>1998</item>
+        <item>1993</item>
+        <item>1995</item>
+        <item>1992</item>
+        <item>2005</item>
+        <item>2015</item>
+    </array>
+
+    <array name="music_list_area">
+        <item>日本</item>
+        <item>中国-台湾</item>
+        <item>日本</item>
+        <item>中国-香港</item>
+        <item>中国 香港</item>
+        <item>中国 香港</item>
+        <item>中国</item>
+        <item>中国</item>
+    </array>
 </resources>

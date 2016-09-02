@@ -51,5 +51,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile project(':staggeredgridviewlibrary')
     compile project(':parallax_viewpager_library')
+    compile 'com.blankj:utilcode:1.1.4'
+    compile 'com.baoyz.swipemenulistview:library:1.3.0'
 //    compile 'com.bm.photoview:library:1.4.0'
 }

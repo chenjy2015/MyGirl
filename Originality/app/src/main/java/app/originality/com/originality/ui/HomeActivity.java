@@ -2,14 +2,14 @@ package app.originality.com.originality.ui;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
+import java.util.ArrayList;
 
 import app.originality.com.originality.R;
 import app.originality.com.originality.ui.fragment.AboutFragment;
@@ -18,12 +18,12 @@ import app.originality.com.originality.ui.fragment.HomeFragment;
 import app.originality.com.originality.ui.fragment.MusicListFragment;
 import app.originality.com.originality.ui.fragment.PersonalInforFragment;
 import app.originality.com.originality.ui.fragment.PhotoFragment;
+import app.originality.com.originality.util.ShortcutUtil;
 import app.originality.com.originality.util.StringHelper;
 import app.originality.com.originality.util.ToastUtils;
+import app.originality.com.originality.util.toast.CustomToast;
 import app.originality.com.residemenu.ResideMenu;
 import app.originality.com.residemenu.ResideMenuItem;
-
-import java.util.ArrayList;
 
 /**
  * @author cjy
@@ -45,8 +45,9 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
         setContentView(R.layout.activity_home);
         init();
         setUpMenu();
-        if (savedInstanceState == null)
+        if (savedInstanceState == null) {
             changeFragment(new HomeFragment());
+        }
     }
 
     public void init() {
@@ -89,12 +90,15 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
     private ResideMenu.OnMenuListener menuListener = new ResideMenu.OnMenuListener() {
         @Override
         public void openMenu() {
-            ToastUtils.showBigVioletToastOnBottom(HomeActivity.this, "Menu is open!");
+            //实验代码
+            new CustomToast(getApplicationContext(), Gravity.TOP).init().show("Menu is open!", 2000);
+            new ShortcutUtil().createShortCut1(HomeActivity.this);
         }
 
         @Override
         public void closeMenu() {
-            ToastUtils.showBigVioletToastOnBottom(HomeActivity.this, "Menu is closed!");
+            //实验代码
+            new CustomToast(getApplicationContext(), Gravity.TOP).init().show("Menu is closed!", 2000);
         }
     };
 

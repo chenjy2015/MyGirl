@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public interface MediaPlayerProgressListenner extends Serializable{
 
-    public void onStart(int duration);
+    public void onPlayerStart(int duration);
 
-    public void onChange(int currentPosition);
+    public void onPlayerChange(int currentPosition);
 
-    public void onPause();
+    public void onPlayerPause();
 
-    public void onStop();
+    public void onPlayerStop();
 
 
 }

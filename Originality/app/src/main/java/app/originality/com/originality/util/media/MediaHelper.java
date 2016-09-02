@@ -12,15 +12,13 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import app.originality.com.originality.application.OApplication;
 import app.originality.com.originality.bean.MusicSourceVO;
 import app.originality.com.originality.util.AndroidSystemHelper;
 import app.originality.com.originality.util.LogOut;
-
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * 多媒体播放辅助类
@@ -36,6 +34,8 @@ public class MediaHelper extends ActivityMethod {
     private static MediaHelper mInstance;
 
     private static MediaPlayerProgressListenner mMediaPlayerProgressListenner;   //当前多媒体播放进度值
+
+    private static Timer mTimer;
 
     private static Context mContext;
 
@@ -63,7 +63,7 @@ public class MediaHelper extends ActivityMethod {
      */
     public void setMediaPlayerProgressListenner(MediaPlayerProgressListenner mediaPlayerProgressListenner) {
         mMediaPlayerProgressListenner = mediaPlayerProgressListenner;
-        mMediaPlayerProgressListenner.onStart(getDuration());
+        mMediaPlayerProgressListenner.onPlayerStart(getDuration());
         if (mediaPlayerProgressListenner != null) {
             initMediaPlayerChange();
         }
@@ -93,7 +93,7 @@ public class MediaHelper extends ActivityMethod {
         super.onPause();
         if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
             mMediaPlayer.pause();
-            mMediaPlayerProgressListenner.onPause();
+            mMediaPlayerProgressListenner.onPlayerPause();
         }
     }
 
@@ -102,20 +102,26 @@ public class MediaHelper extends ActivityMethod {
         super.onStop();
         if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
             mMediaPlayer.stop();
-            mMediaPlayerProgressListenner.onStop();
+            mMediaPlayerProgressListenner.onPlayerStop();
+        }
+        if (mTimer != null) {
+            mTimer.cancel();
         }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if (mTimer != null) {
+            mTimer.cancel();
+        }
         if (mMediaPlayer != null) {
             if (mMediaPlayer.isPlaying()) {
                 mMediaPlayer.stop();
-                mMediaPlayerProgressListenner.onStop();
+                mMediaPlayerProgressListenner.onPlayerStop();
             }
             mMediaPlayer.release();
-            mMediaPlayerProgressListenner.onStop();
+            mMediaPlayerProgressListenner.onPlayerStop();
         }
     }
 
@@ -238,7 +244,7 @@ public class MediaHelper extends ActivityMethod {
         } else if (mediaType == MediaType.MUSIC_ASSET) {
             playerMusicByAsset(url);
         } else if (mediaType == MediaType.MUSIC_RAW) {
-            playerMusicByRaw(url);
+            playerMusicByRaw(Integer.parseInt(url) + "");
             //媒体类型 ； 视频，资源来源：互联网
         } else if (mediaType == MediaType.VIDEO_INTERNER) {
 
@@ -246,34 +252,14 @@ public class MediaHelper extends ActivityMethod {
         } else if (mediaType == MediaType.VIDEO_LOCATION) {
 
         }
-        setMediaPlayerProgressListenner(mediaPlayerProgressListenner);
-    }
-
-    public void pause() {
-        if (mMediaPlayer == null) {
-            return;
-        }
-        try {
-            if (mMediaPlayer.isPlaying()) {
-                mMediaPlayer.pause();
-            }
-        } catch (IllegalStateException e) {
+        if (mediaPlayerProgressListenner != null) {
+            setMediaPlayerProgressListenner(mediaPlayerProgressListenner);
         }
     }
 
-    public void stop() {
-        if (mMediaPlayer == null) {
-            return;
-        }
-        try {
-            if (mMediaPlayer.isPlaying()) {
-                mMediaPlayer.stop();
-            }
-        } catch (IllegalStateException e) {
-        }
-    }
-
-    public void start(){
+    @Override
+    public void onStart() {
+        super.onStart();
         if (mMediaPlayer == null) {
             return;
         }
@@ -284,7 +270,10 @@ public class MediaHelper extends ActivityMethod {
         }
     }
 
-    public void reStart() {
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
         if (mMediaPlayer == null) {
             return;
         }
@@ -334,7 +323,7 @@ public class MediaHelper extends ActivityMethod {
 
     public void initMediaPlayerChange() {
         //----------定时器记录播放进度---------//
-        Timer mTimer = new Timer();
+        mTimer = new Timer();
         TimerTask mTimerTask = new TimerTask() {
             @Override
             public void run() {
@@ -350,7 +339,7 @@ public class MediaHelper extends ActivityMethod {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            mMediaPlayerProgressListenner.onChange(getCurrentPosition());
+            mMediaPlayerProgressListenner.onPlayerChange(getCurrentPosition());
         }
     };
 }

@@ -1,35 +1,23 @@
 package app.originality.com.originality.modules.photo.adapter;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.bm.library.Info;
 import com.bm.library.PhotoView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.List;
+import java.util.Random;
+
 import app.originality.com.originality.R;
 import app.originality.com.originality.adapter.OriginalityBaseAdapter;
-import app.originality.com.originality.bean.SpaceImageVO;
-import app.originality.com.originality.config.Contants;
-import app.originality.com.originality.factory.OYEventFactory;
 import app.originality.com.originality.modules.photo.bean.PhotoBeanVO;
 import app.originality.com.originality.modules.photo.ui.SpaceImageDetailActivity2;
 import app.originality.com.originality.util.AndroidSystemHelper;
 import app.originality.com.originality.util.JumpManager;
-import app.originality.com.originality.util.StringUtils;
-import app.originality.com.originality.util.animation.Rotate3dAnimation;
-import de.greenrobot.event.EventBus;
-
-import java.util.List;
-import java.util.Random;
 
 public class PhotoListAdapter extends OriginalityBaseAdapter {
 

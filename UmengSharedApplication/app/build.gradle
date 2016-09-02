@@ -4,19 +4,51 @@ android {
     compileSdkVersion 21
     buildToolsVersion "23.0.2"
 
+    productFlavors {
+        wandoujia{}
+        xiaomi{}
+        qq{}
+        _360 {}
+        yingyongbao {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
     defaultConfig {
-        applicationId "com.umeng.share.UmengSharedApplication"
+        applicationId "com.oxbix.spanlogistics"
         minSdkVersion 11
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+        // dex突破65535的限制
+        multiDexEnabled true
     }
+
+    //签名
+    signingConfigs{
+
+        debug {
+            // No debug config
+        }
+
+        release {
+            storeFile file("D:\\SVN\\App_Data_backup\\APP上架资料\\android\\kye.keystore")
+            storePassword "kye915800"
+            keyAlias "kye"
+            keyPassword "kye915800"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
+
 }
 
 dependencies {
@@ -24,4 +56,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
 //    compile 'com.android.support:appcompat-v7:23.1.1'
     provided project(':dl-lib') //只在调试时编译 打包时不参与编译
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

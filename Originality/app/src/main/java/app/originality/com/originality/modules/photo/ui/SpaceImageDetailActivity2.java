@@ -10,14 +10,12 @@ import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bm.library.Info;
 import com.bm.library.PhotoView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import app.originality.com.originality.R;
-import app.originality.com.originality.util.ToastUtils;
 import app.originality.com.originality.util.animation.Rotate3dAnimation;
 
 /**
@@ -111,8 +109,6 @@ public class SpaceImageDetailActivity2 extends Activity implements View.OnLongCl
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-        }
     }
 
     public class OnLongClick implements View.OnLongClickListener {

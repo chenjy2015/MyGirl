@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep class com.blankj.utilcode.** { *; }
+-keep classmembers class com.blankj.utilcode.** { *; }
+-dontwarn com.blankj.utilcode.**
