@@ -1,5 +1,12 @@
 package app.originality.com.originality.util.media;
 
+/**
+ * @author cjy
+ * @version V1.0
+ * @company Chenjy_Studio
+ * @Description 模拟Activity生命周期
+ * @date 2016/9/3 11:49
+ */
 public abstract class ActivityMethod implements ActivityMethodInterface {
 
     @Override

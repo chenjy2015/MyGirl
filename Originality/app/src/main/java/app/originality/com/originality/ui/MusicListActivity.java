@@ -2,7 +2,6 @@ package app.originality.com.originality.ui;
 
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -37,7 +36,7 @@ public class MusicListActivity extends BaseActivity implements ImageCycleView.Im
         MediaPlayerProgressListenner, View.OnClickListener, SwipeMenuListView.OnMenuItemClickListener,
         AdapterView.OnItemClickListener, SeekBar.OnSeekBarChangeListener {
 
-    private Button mStartBtn, mSeekToBtn, mSeekBackBtn;
+    private ImageView mStartBtn, mSeekToBtn, mSeekBackBtn;
     private SeekBar mSeekBarProgress;
     private TextView mMusicName, mMusicYear, mMusicSinger, mMusicArea, mMusicSize;
     //    private ImageView mMusicImg;
@@ -62,9 +61,9 @@ public class MusicListActivity extends BaseActivity implements ImageCycleView.Im
 //        mMusicImg = (ImageView) this.findViewById(R.id.id_music_img);
         mAdImg = (ImageCycleView) this.findViewById(R.id.id_music_img);
         mSeekBarProgress = (SeekBar) this.findViewById(R.id.id_seekbar);
-        mStartBtn = (Button) this.findViewById(R.id.pause);
-        mSeekToBtn = (Button) this.findViewById(R.id.seekTo);
-        mSeekBackBtn = (Button) this.findViewById(R.id.seekBack);
+        mStartBtn = (ImageView) this.findViewById(R.id.pause);
+        mSeekToBtn = (ImageView) this.findViewById(R.id.seekTo);
+        mSeekBackBtn = (ImageView) this.findViewById(R.id.seekBack);
         mMusicName = (TextView) this.findViewById(R.id.music_name);
         mMusicYear = (TextView) this.findViewById(R.id.music_particular_year);
         mMusicSinger = (TextView) this.findViewById(R.id.music_singer);
@@ -80,6 +79,7 @@ public class MusicListActivity extends BaseActivity implements ImageCycleView.Im
     protected void init() {
         mTitleBar.hideTitleLayout();
         MediaHelper.getInstance().player(MediaType.MUSIC_ASSET, "dawn_of_heroes.mp3", this);
+        mStartBtn.setSelected(true);
         isStart = true;
     }
 
@@ -152,25 +152,32 @@ public class MusicListActivity extends BaseActivity implements ImageCycleView.Im
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.pause:
-                if (mStartBtn.getText().equals("暂停")) {
-                    mStartBtn.setText("继续");
-                    MediaHelper.getInstance().onPause();
-                } else {
-                    mStartBtn.setText("暂停");
+                if (!mStartBtn.isSelected()) {
                     MediaHelper.getInstance().onStart();
+                    mStartBtn.setSelected(true);
+                } else {
+                    MediaHelper.getInstance().onPause();
+                    mStartBtn.setSelected(false);
                 }
                 break;
 
             case R.id.seekTo:
                 int position = mCurrentProgress * 10 + mCurrentPosition;
+                onPlayerChange(position > mDuration ? mDuration : position);
                 MediaHelper.getInstance().seekTo(position > mDuration ? mDuration : position);
+                if(mStartBtn.isSelected()){
+                    MediaHelper.getInstance().onStart();
+                }
                 break;
 
             case R.id.seekBack:
                 int position1 = mCurrentPosition - mCurrentProgress * 10;
+                onPlayerChange(position1 < -0 ? 0 : position1);
                 MediaHelper.getInstance().seekTo(position1 < -0 ? 0 : position1);
+                if(mStartBtn.isSelected()){
+                    MediaHelper.getInstance().onStart();
+                }
                 break;
-
         }
     }
 
@@ -264,5 +271,8 @@ public class MusicListActivity extends BaseActivity implements ImageCycleView.Im
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
         isCan = true;
+        if(mStartBtn.isSelected()){
+            MediaHelper.getInstance().onStart();
+        }
     }
 }

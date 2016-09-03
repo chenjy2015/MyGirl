@@ -4,7 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 
 /**
- * 多媒体管理类
+ *
+ * @company Chenjy_Studio
+ * @Description 多媒体管理类
+ * @author cjy
+ * @date 2016/9/3 11:50
+ * @version V1.0
  */
 public class MediaManager {
 

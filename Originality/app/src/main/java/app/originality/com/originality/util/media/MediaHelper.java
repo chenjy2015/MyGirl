@@ -21,7 +21,11 @@ import app.originality.com.originality.util.AndroidSystemHelper;
 import app.originality.com.originality.util.LogOut;
 
 /**
- * 多媒体播放辅助类
+ * @author cjy
+ * @version V1.0
+ * @company Chenjy_Studio
+ * @Description 多媒体播放辅助类
+ * @date 2016/9/3 11:50
  */
 public class MediaHelper extends ActivityMethod {
 
@@ -87,7 +91,6 @@ public class MediaHelper extends ActivityMethod {
     public void onResume() {
         super.onResume();
     }
-
 
 
     /**
@@ -299,7 +302,7 @@ public class MediaHelper extends ActivityMethod {
                 mMediaPlayer.pause();
             }
             mMediaPlayer.seekTo(position);
-            mMediaPlayer.start();
+//            mMediaPlayer.start();
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }

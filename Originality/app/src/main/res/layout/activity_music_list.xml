@@ -25,34 +25,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="50dp"
             android:orientation="horizontal"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+            android:paddingLeft="55dp"
+            android:paddingRight="55dp">
 
 
-            <Button
+            <ImageView
                 android:id="@+id/seekBack"
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:src="@drawable/selector_paly_last"
                 android:text="后退%10"
                 android:textSize="13dp" />
 
-            <Button
+            <ImageView
                 android:id="@+id/pause"
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/selector_paly"
                 android:text="暂停"
                 android:textSize="13dp" />
 
 
-            <Button
+            <ImageView
                 android:id="@+id/seekTo"
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:src="@drawable/selector_paly_next"
                 android:text="前进%10"
                 android:textSize="13dp" />
 
@@ -61,13 +65,13 @@
         <SeekBar
             android:id="@+id/id_seekbar"
             style="@style/my_seekbar_self"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:progress="50"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp" />
+            android:layout_marginRight="18dp"
+            android:progress="50" />
 
     </FrameLayout>
 
@@ -79,13 +83,15 @@
         android:layout_height="1dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@color/black_pure" />
+        android:background="@color/black_pure"
+        android:visibility="gone" />
 
     <com.baoyz.swipemenulistview.SwipeMenuListView
         android:id="@+id/music_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginRight="15dp"
+        android:scrollbars="none" />
 
 </LinearLayout>

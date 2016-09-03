@@ -2,7 +2,11 @@ package app.originality.com.originality.util.media;
 
 
 /**
- * 模拟Activity声明周期方法
+ * @author cjy
+ * @version V1.0
+ * @company Chenjy_Studio
+ * @Description 模拟Activity声明周期方法
+ * @date 2016/9/3 11:50
  */
 public interface ActivityMethodInterface {
 

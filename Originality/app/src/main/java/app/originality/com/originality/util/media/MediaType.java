@@ -2,8 +2,14 @@ package app.originality.com.originality.util.media;
 
 import java.io.Serializable;
 
+
 /**
- * Created by Administrator on 2016/3/17.
+ *
+ * @company Chenjy_Studio
+ * @Description 多媒体播放地址来源
+ * @author cjy
+ * @date 2016/3/17 11:51
+ * @version V1.0
  */
 public enum MediaType implements Serializable {
 

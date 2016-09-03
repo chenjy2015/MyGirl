@@ -18,7 +18,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="心跳"
-            android:textSize="16dp" />
+            android:textColor="@color/green_litter"
+            android:textSize="13dp" />
 
         <TextView
             android:layout_width="0dp"
