@@ -324,7 +324,7 @@ public class MediaHelper extends ActivityMethod {
     }
 
     public void initMediaPlayerChange() {
-        //----------定时器记录播放进度---------//
+        //----------定时器记录播放进度--------- //
         mTimer = new Timer();
         TimerTask mTimerTask = new TimerTask() {
             @Override
