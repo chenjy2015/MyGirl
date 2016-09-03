@@ -23,13 +23,25 @@ import app.originality.com.originality.util.SwipeMenuCreatorHelper;
 import app.originality.com.originality.util.media.MediaHelper;
 import app.originality.com.originality.util.media.MediaPlayerProgressListenner;
 import app.originality.com.originality.util.media.MediaType;
+import app.originality.com.originality.widget.carousel_figure.ImageCycleView;
 
-public class MusicListActivity extends BaseActivity implements MediaPlayerProgressListenner, View.OnClickListener, SwipeMenuListView.OnMenuItemClickListener, AdapterView.OnItemClickListener {
+
+/**
+ * @author cjy
+ * @version V1.0
+ * @company Chenjy_Studio
+ * @Description 音乐播放列表界面
+ * @date 2016/9/3 10:25
+ */
+public class MusicListActivity extends BaseActivity implements ImageCycleView.ImageCycleViewListener,
+        MediaPlayerProgressListenner, View.OnClickListener, SwipeMenuListView.OnMenuItemClickListener,
+        AdapterView.OnItemClickListener, SeekBar.OnSeekBarChangeListener {
 
     private Button mStartBtn, mSeekToBtn, mSeekBackBtn;
     private SeekBar mSeekBarProgress;
     private TextView mMusicName, mMusicYear, mMusicSinger, mMusicArea, mMusicSize;
-    private ImageView mMusicImg;
+    //    private ImageView mMusicImg;
+    private ImageCycleView mAdImg;
     private SwipeMenuListView mListView;
     private int mCurrentProgress; //平均播放值
     private int mDuration; //播放总长度值
@@ -37,7 +49,7 @@ public class MusicListActivity extends BaseActivity implements MediaPlayerProgre
     private List<MusicSourceVO> mData;
     private MusicHomeListAdapter mHomeListAdapter;
     private boolean isStart;
-//    private boolean isCan;      //是否接受进度条变化操作
+    private boolean isCan = true;      //是否接受进度条变化操作
 
     @Override
     protected int setView() {
@@ -47,7 +59,8 @@ public class MusicListActivity extends BaseActivity implements MediaPlayerProgre
     @Override
     protected void findViews() {
         mListView = (SwipeMenuListView) this.findViewById(R.id.music_list);
-        mMusicImg = (ImageView) this.findViewById(R.id.id_music_img);
+//        mMusicImg = (ImageView) this.findViewById(R.id.id_music_img);
+        mAdImg = (ImageCycleView) this.findViewById(R.id.id_music_img);
         mSeekBarProgress = (SeekBar) this.findViewById(R.id.id_seekbar);
         mStartBtn = (Button) this.findViewById(R.id.pause);
         mSeekToBtn = (Button) this.findViewById(R.id.seekTo);
@@ -66,10 +79,8 @@ public class MusicListActivity extends BaseActivity implements MediaPlayerProgre
     @Override
     protected void init() {
         mTitleBar.hideTitleLayout();
-//        isCan = true;
-        MediaHelper.getInstance().player(MediaType.MUSIC_RAW, R.raw.dawn_of_heroes + "", this);
+        MediaHelper.getInstance().player(MediaType.MUSIC_ASSET, "dawn_of_heroes.mp3", this);
         isStart = true;
-        ImageLoader.getInstance().displayImage(Contants.imageUrls[10], mMusicImg);
     }
 
 
@@ -78,18 +89,26 @@ public class MusicListActivity extends BaseActivity implements MediaPlayerProgre
         mStartBtn.setOnClickListener(this);
         mSeekToBtn.setOnClickListener(this);
         mSeekBackBtn.setOnClickListener(this);
-        // step 1. create a MenuCreator
+
         SwipeMenuCreator creator = SwipeMenuCreatorHelper.createSwipeMenuCreator(MusicListActivity.this);
-        // set creator
         mListView.setMenuCreator(creator);
-        // step 2. listener item click event
         mListView.setOnMenuItemClickListener(this);
         mListView.setOnItemClickListener(this);
+
+        mSeekBarProgress.setOnSeekBarChangeListener(this);
     }
 
 
     @Override
     protected void loadData() {
+        //轮播图
+        ArrayList<String> imgUrls = new ArrayList<String>();
+        for (int i = 0; i < 3; i++) {
+            imgUrls.add(Contants.imageUrls[i]);
+        }
+        mAdImg.setImageResources(imgUrls, this);
+
+        //音乐列表
         mData = new ArrayList<MusicSourceVO>();
         String[] names = getResources().getStringArray(R.array.music_list_name);
         String[] resources = getResources().getStringArray(R.array.music_list_local_resource);
@@ -179,6 +198,7 @@ public class MusicListActivity extends BaseActivity implements MediaPlayerProgre
     @Override
     public void onPlayerStart(int duration) {
         isStart = true;
+        isCan = true;
         mDuration = duration;
         initProgress(duration);
         mSeekBarProgress.setMax(duration);
@@ -186,10 +206,10 @@ public class MusicListActivity extends BaseActivity implements MediaPlayerProgre
 
     @Override
     public void onPlayerChange(int currentPosition) {
-//        if(isCan){
-        mCurrentPosition = currentPosition;
-        mSeekBarProgress.setProgress(currentPosition);
-//        }
+        if (isCan) {
+            mCurrentPosition = currentPosition;
+            mSeekBarProgress.setProgress(currentPosition);
+        }
     }
 
     @Override
@@ -211,5 +231,38 @@ public class MusicListActivity extends BaseActivity implements MediaPlayerProgre
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         MediaHelper.getInstance().onDestroy();
         MediaHelper.getInstance().player(MediaType.MUSIC_ASSET, mData.get(position).getVoiceLocationPath(), this);
+    }
+
+    @Override
+    public void displayImage(String imageURL, ImageView imageView) {
+        ImageLoader.getInstance().displayImage(imageURL, imageView);
+    }
+
+    @Override
+    public void onImageClick(int position, View imageView) {
+
+    }
+
+    //Seekbar
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        //如果进度条改变不是因为音乐播放的回调 而是因为手动改变
+        if (!isCan) {
+            MediaHelper.getInstance().seekTo(progress);
+            onPlayerChange(progress);
+        }
+    }
+
+    //Seekbar
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+        isCan = false;
+        MediaHelper.getInstance().onPause();
+    }
+
+    //Seekbar
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        isCan = true;
     }
 }

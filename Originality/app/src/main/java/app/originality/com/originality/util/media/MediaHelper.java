@@ -88,42 +88,7 @@ public class MediaHelper extends ActivityMethod {
         super.onResume();
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
-            mMediaPlayer.pause();
-            mMediaPlayerProgressListenner.onPlayerPause();
-        }
-    }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
-            mMediaPlayer.stop();
-            mMediaPlayerProgressListenner.onPlayerStop();
-        }
-        if (mTimer != null) {
-            mTimer.cancel();
-        }
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (mTimer != null) {
-            mTimer.cancel();
-        }
-        if (mMediaPlayer != null) {
-            if (mMediaPlayer.isPlaying()) {
-                mMediaPlayer.stop();
-                mMediaPlayerProgressListenner.onPlayerStop();
-            }
-            mMediaPlayer.release();
-            mMediaPlayerProgressListenner.onPlayerStop();
-        }
-    }
 
     /**
      * 播放本地音乐文件
@@ -288,6 +253,43 @@ public class MediaHelper extends ActivityMethod {
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+            mMediaPlayer.pause();
+            mMediaPlayerProgressListenner.onPlayerPause();
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+            mMediaPlayer.stop();
+            mMediaPlayerProgressListenner.onPlayerStop();
+        }
+        if (mTimer != null) {
+            mTimer.cancel();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mTimer != null) {
+            mTimer.cancel();
+        }
+        if (mMediaPlayer != null) {
+            if (mMediaPlayer.isPlaying()) {
+                mMediaPlayer.stop();
+                mMediaPlayerProgressListenner.onPlayerStop();
+            }
+            mMediaPlayer.release();
+            mMediaPlayerProgressListenner.onPlayerStop();
+        }
+    }
+
     public void seekTo(int position) {
         if (mMediaPlayer == null) {
             return;
@@ -295,9 +297,9 @@ public class MediaHelper extends ActivityMethod {
         try {
             if (mMediaPlayer.isPlaying()) {
                 mMediaPlayer.pause();
-                mMediaPlayer.seekTo(position);
-                mMediaPlayer.start();
             }
+            mMediaPlayer.seekTo(position);
+            mMediaPlayer.start();
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }

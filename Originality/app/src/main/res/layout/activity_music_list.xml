@@ -5,58 +5,72 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/id_music_img"
+    <!--  <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/id_music_img"
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:scaleType="fitXY" />-->
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:scaleType="fitXY" />
+        android:layout_height="280dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
+        <app.originality.com.originality.widget.carousel_figure.ImageCycleView
+            android:id="@+id/id_music_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
 
-
-        <Button
-            android:id="@+id/seekBack"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:minWidth="80dp"
-            android:text="后退%10"
-            android:textSize="16dp" />
-
-        <Button
-            android:id="@+id/pause"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:minWidth="80dp"
-            android:text="暂停"
-            android:textSize="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
 
-        <Button
-            android:id="@+id/seekTo"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:minWidth="80dp"
-            android:text="前进%10"
-            android:textSize="16dp" />
+            <Button
+                android:id="@+id/seekBack"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="后退%10"
+                android:textSize="13dp" />
+
+            <Button
+                android:id="@+id/pause"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="暂停"
+                android:textSize="13dp" />
 
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/seekTo"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="前进%10"
+                android:textSize="13dp" />
 
-    <SeekBar
-        android:id="@+id/id_seekbar"
-        style="@style/my_seekbar_self"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/id_seekbar"
+            style="@style/my_seekbar_self"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="50"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp" />
+
+    </FrameLayout>
+
 
     <include layout="@layout/item_fragment_music_list_center" />
 

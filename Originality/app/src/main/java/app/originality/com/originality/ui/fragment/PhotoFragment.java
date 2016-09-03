@@ -6,6 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import java.util.ArrayList;
+
 import app.originality.com.originality.R;
 import app.originality.com.originality.adapter.PhotoHomeRecyclerAdapter;
 import app.originality.com.originality.bean.PhotoGroupVO;
@@ -13,12 +15,8 @@ import app.originality.com.originality.config.Contants;
 import app.originality.com.originality.modules.photo.interfaces.RecyclerViewItemClickListenner;
 import app.originality.com.originality.util.JumpManager;
 import app.originality.com.originality.util.ToastUtils;
-import app.originality.com.originality.util.media.MediaContact;
 import app.originality.com.originality.util.media.MediaManager;
-import app.originality.com.originality.util.media.MediaType;
 import app.originality.com.originality.widget.recycler_divider_itemDecoration.HorizontalDividerItemDecoration;
-
-import java.util.ArrayList;
 
 /**
  *

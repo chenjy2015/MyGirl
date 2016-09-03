@@ -95,7 +95,11 @@
     <style name="my_seekbar_self" parent="@android:style/Widget.SeekBar">
         <item name="android:progressDrawable">@drawable/progress_horizontal_self</item>
         <item name="android:thumb">@drawable/seek_thumb_self</item>
-        <item name="android:thumbOffset">8dp</item>
+        <item name="android:thumbOffset">0dp</item>
+        <item name="android:maxHeight">5.0dip</item>
+        <item name="android:minHeight">5.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
         <item name="android:focusable">true</item>
     </style>
 
